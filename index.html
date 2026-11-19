@@ -1170,6 +1170,57 @@
           transition: none !important;
         }
       }
+      /* ---- profile + analytics (added) ---- */
+      @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
+      .nr{display:flex;align-items:center;gap:16px}
+      nav .nr a:first-child{margin:0;font-size:15px}
+      .vb{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1.5px solid currentColor;border-radius:99px;font:600 13px var(--disp);font-variant-numeric:tabular-nums}
+      .vb i{width:8px;height:8px;border-radius:50%;background:currentColor;animation:p 1.6s infinite}
+      .vb:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+      #vp{position:fixed;z-index:31;right:20px;top:calc(64px + env(safe-area-inset-top,0px));width:min(330px,calc(100vw - 40px));padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(var(--pr),.92);backdrop-filter:blur(14px);opacity:0;visibility:hidden;transform:translateY(-10px) scale(.97);transform-origin:100% 0;transition:opacity .3s,transform .3s,visibility .3s}
+      #vp.open{opacity:1;visibility:visible;transform:none}
+      #vp .big2{font:800 52px/1 var(--disp);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+      #vp small{display:block;color:var(--dim);font-size:13px;margin-top:4px}
+      #vp .vg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 14px}
+      #vp .vg b{display:block;font:700 22px var(--disp);font-variant-numeric:tabular-nums}
+      #vp .trk{height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+      #vp .trk i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b),var(--c));transition:width .4s}
+      #vnote{display:none;color:var(--d)!important}
+      .pf{display:grid;gap:50px;margin-top:40px}
+      @media(min-width:900px){.pf{grid-template-columns:minmax(300px,420px) 1fr;gap:80px;align-items:start}}
+      #pfc{perspective:900px}
+      .pfk{position:relative;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out;transform-style:preserve-3d}
+      .pfr{position:absolute;inset:-3px;border-radius:28px;background:conic-gradient(from var(--ang),var(--a),var(--b),var(--c),var(--e),var(--a));animation:spn 7s linear infinite;filter:blur(.3px)}
+      @keyframes spn{to{--ang:360deg}}
+      .pfi{position:relative;aspect-ratio:4/5;border-radius:25px;overflow:hidden;background:radial-gradient(120% 90% at 20% 10%,#2a2750,#12121a 70%);display:grid;place-items:center;margin:0}
+      .pfi .mono{font:800 clamp(90px,14vw,150px)/1 var(--disp);letter-spacing:-.06em;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+      .pfi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+      .pfi::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--sx,30%) var(--sy,20%),rgba(255,255,255,.22),transparent 60%);mix-blend-mode:overlay;pointer-events:none}
+      .pfn{position:absolute;left:14px;right:14px;bottom:14px;padding:12px 16px;border-radius:16px;background:rgba(18,18,26,.78);backdrop-filter:blur(10px);color:#efede8;transform:translateZ(40px)}
+      .pfn b{display:block;font:700 18px var(--disp)}
+      .pfn span{font-size:14px;color:#cfcdd6}
+      .pfn em{display:flex;align-items:center;gap:8px;font-style:normal;font-size:13px;margin-top:6px;color:var(--c)}
+      .pfn em i{width:8px;height:8px;border-radius:50%;background:var(--c);animation:p 2s infinite}
+      .pfg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0 0 26px}
+      .pfg>*{all:unset;box-sizing:border-box;display:block;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:radial-gradient(180px circle at var(--mx,50%) var(--my,0%),rgba(143,132,255,.2),transparent 70%),rgba(var(--pr),.85);transition:border-color .3s}
+      .pfg>*:hover{border-color:var(--a)}
+      .pfg button{cursor:pointer}
+      .pfg button:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+      .pfg dt,.pfg .k{display:block;color:var(--dim);font-size:13px;margin-bottom:4px}
+      .pfg dd,.pfg .v{display:block;margin:0;font:600 17px/1.25 var(--disp)}
+      .pfg .v small{display:block;font:400 13px var(--body);color:var(--soft);margin-top:3px}
+      .pfb .tg{margin-bottom:6px}.pfb .edu{padding:24px;margin-bottom:22px}.pfb .edu h3{font-size:clamp(22px,2.6vw,34px)}.pfb .edu .tg{margin:0}
+      @media(max-width:640px){.vb{padding:5px 10px}.nr a{display:none}.stk{font-size:12px}}
+      #profile{position:relative;overflow:hidden}
+      #profile .wrap{position:relative;z-index:1}
+      .pfgh{position:absolute;top:8%;left:0;white-space:nowrap;font:800 clamp(140px,24vw,340px)/1 var(--disp);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--line);pointer-events:none;z-index:0}
+      .pfsc{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.55}
+      .pfsc path{fill:none;stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke}
+      #pfc{position:relative}
+      .stk{position:absolute;z-index:3;padding:6px 12px;font:700 13px var(--disp);color:#12121a;border-radius:4px;box-shadow:3px 5px 0 rgba(0,0,0,.35);cursor:grab;touch-action:none;user-select:none;white-space:nowrap}
+      .stk:active{cursor:grabbing}
+      .ink{position:absolute;border-radius:50%;pointer-events:none;z-index:2;margin:-6px 0 0 -6px;mix-blend-mode:screen}
+      :root[data-theme="light"] .ink{mix-blend-mode:multiply}
     </style>
   </head>
   <body>
@@ -1187,7 +1238,23 @@
     </div>
     <nav>
       <a href="#top">Michael Angelou C. Quinit</a>
+      <div class="nr">
+        <a href="#profile">Profile</a>
+        <button class="vb" id="vb" aria-expanded="false" aria-controls="vp"><i></i><span id="vn">…</span><span id="vl">views</span></button>
+      </div>
     </nav>
+    <div id="vp" role="region" aria-label="Portfolio analytics">
+      <div class="big2" id="vtot">…</div>
+      <small id="vlab">people have viewed this portfolio</small>
+      <div class="vg">
+        <div><b id="vme">…</b><small>your visitor number</small></div>
+        <div><b id="vtm">0:00</b><small>time on page</small></div>
+        <div><b id="vsc">0%</b><small>scrolled</small></div>
+        <div><b id="vse">0/0</b><small>sections explored</small></div>
+      </div>
+      <div class="trk" aria-hidden="true"><i id="vtr"></i></div>
+      <small id="vnote">Live counter unreachable, showing visits from this browser only.</small>
+    </div>
     <div class="ctl">
       <button id="bs" aria-pressed="false">Sound: off</button
       ><button id="bt">Light</button
@@ -1300,6 +1367,73 @@
                 data-n="5"
                 >0</span
               ><span>database engines used</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="veil" data-s="Profile">
+        <div class="pfgh" aria-hidden="true">MICHAEL ✦ QUINIT ✦ MICHAEL ✦ QUINIT</div>
+        <svg class="pfsc" id="pfsc" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="wrap">
+          <p class="lab">Profile, education and résumé</p>
+          <h2 class="sec-h">The person behind the stack.</h2>
+          <div class="pf">
+            <div id="pfc">
+              <div class="pfk">
+                <div class="pfr"></div>
+                <figure class="pfi">
+                  <span class="mono" aria-hidden="true">MQ</span>
+                  <img src="images/profile.jpg" alt="Portrait of Michael Angelou C. Quinit" width="400" height="500" onerror="this.remove()" />
+                  <figcaption class="pfn">
+                    <b>Michael Angelou C. Quinit</b>
+                    <span>Full Stack Web Developer</span>
+                    <em><i></i>Open to remote work</em>
+                  </figcaption>
+                </figure>
+              </div>
+              <span class="stk" style="top:-14px;left:-14px;background:var(--d)">since 2022</span>
+              <span class="stk" style="top:24%;right:-12px;background:var(--c)">schema first</span>
+              <span class="stk" style="bottom:22%;left:-16px;background:var(--e)">RLS. always.</span>
+              <span class="stk" style="bottom:-12px;right:12%;background:var(--b)">drag me ✦</span>
+            </div>
+            <div class="pfb">
+              <p class="lede">
+                I’m Michael, a full stack web developer and 4th-year IT student
+                specializing in Database Systems at Mindanao State University –
+                Iligan Institute of Technology. I design, build and ship whole
+                products, from schema to deployment, and use AI tools like
+                Claude and ChatGPT to move faster while I own the architecture,
+                the review and the security.
+              </p>
+              <dl class="pfg" id="pfg">
+                <div><dt>Role</dt><dd>Full Stack Web Developer<small style="display:block;font:400 13px var(--body);color:var(--soft)">AI-assisted workflow</small></dd></div>
+                <div><dt>Based in</dt><dd>Iligan City, Philippines<small style="display:block;font:400 13px var(--body);color:var(--soft)" id="pfclk">PHT · UTC+8</small></dd></div>
+                <div><dt>Experience</dt><dd>Independent since 2022<small style="display:block;font:400 13px var(--body);color:var(--soft)">10+ web apps shipped</small></dd></div>
+                <div><dt>Availability</dt><dd>Open to remote work</dd></div>
+                <button id="pfm" aria-label="Copy email address"><span class="k">Email (tap to copy)</span><span class="v">michaelangeloucquinit@gmail.com</span></button>
+              </dl>
+              <div class="edu">
+                <h3>BS Information Technology Major in Database Systems</h3>
+                <p>4th year · Mindanao State University – Iligan Institute of Technology · Iligan City, Philippines</p>
+                <div class="tg">
+                  <span>Database design and administration</span><span>Information assurance and security</span><span>Web development</span><span>Systems analysis</span>
+                </div>
+              </div>
+              <p class="lede" style="margin: 0 0 26px">
+                My degree and my projects feed each other. Class concepts like
+                normalization, access control and network analysis show up in
+                what I ship, and shipping shows me what to study next.
+              </p>
+              <div class="tg">
+                <span>React</span><span>TypeScript</span><span>Node.js</span><span>Supabase</span><span>PostgreSQL</span><span>Neo4j</span><span>Three.js</span><span>Information security</span>
+              </div>
+              <div class="acts">
+                <button class="btn pri" id="rvo">View résumé</button>
+                <button class="btn" id="rvd">Download PDF</button>
+                <button class="btn" id="pfs">Copy recruiter snapshot</button>
+                <a class="btn" href="#contact">Get in touch</a>
+              </div>
             </div>
           </div>
         </div>
@@ -1650,31 +1784,6 @@
               >
             </div>
           </article>
-        </div>
-      </section>
-
-      <section class="veil" id="edu" data-s="Education">
-        <div class="wrap">
-          <p class="lab">Education and résumé</p>
-          <h2 class="sec-h">Still learning, already shipping.</h2>
-          <div class="edu">
-            <h3>BS Information Technology Major in Database Systems</h3>
-            <p>4th year · Iligan City, Philippines</p>
-            <div class="tg">
-              <span>Database design and administration</span
-              ><span>Information assurance and security</span
-              ><span>Web development</span><span>Systems analysis</span>
-            </div>
-          </div>
-          <p class="lede" style="margin: 0">
-            My degree and my projects feed each other. Class concepts like
-            normalization, access control and network analysis show up in what I
-            ship, and shipping shows me what to study next.
-          </p>
-          <div class="acts">
-            <button class="btn pri" id="rvo">View résumé</button
-            ><button class="btn" id="rvd">Download PDF</button>
-          </div>
         </div>
       </section>
 
@@ -3242,6 +3351,203 @@
         addEventListener("keydown", function (e) {
           if (e.key === "Escape") rvClose();
         });
+        (function () {
+        /* ---- profile + analytics (added) ---- */
+        var vb = $("#vb"), vp = $("#vp"), vn = $("#vn"), t0 = Date.now(), seen = {}, nSec = $$("[data-s]").length;
+        var fmt = function (n) { return Number(n).toLocaleString("en-US"); };
+        function roll(el, n) {
+          if (reduce) { el.textContent = fmt(n); return; }
+          var o = { v: 0 };
+          gsap.to(o, { v: n, duration: 1.6, ease: "power3.out", onUpdate: function () { el.textContent = fmt(Math.round(o.v)); } });
+        }
+        function show(n, mine) {
+          roll(vn, n); roll($("#vtot"), n);
+          $("#vme").textContent = "#" + fmt(mine);
+        }
+        var local = 0, owner = false;
+        try {
+          local = (+localStorage.getItem("vl") || 0) + 1;
+          localStorage.setItem("vl", local);
+          if (/[?&]owner=1/.test(location.search)) localStorage.setItem("own", "1");
+          owner = localStorage.getItem("own") === "1";
+        } catch (e) {}
+        (function () {
+          var first = true, mine = null;
+          try { first = !sessionStorage.getItem("vc"); mine = sessionStorage.getItem("vm"); } catch (e) {}
+          var base = "https://api.counterapi.dev/v1/aenzari-portfolio/views",
+            ctl = window.AbortController ? new AbortController() : null,
+            to = setTimeout(function () { if (ctl) ctl.abort(); }, 6000);
+          fetch(first && !owner ? base + "/up" : base, ctl ? { signal: ctl.signal } : {})
+            .then(function (r) { return r.json(); })
+            .then(function (d) {
+              clearTimeout(to);
+              var n = d && (d.count != null ? d.count : d.value);
+              if (n == null) throw 0;
+              if (first && !owner) { mine = n; try { sessionStorage.setItem("vc", "1"); sessionStorage.setItem("vm", n); } catch (e) {} }
+              show(n, mine || n);
+            })
+            .catch(function () {
+              $("#vl").textContent = local === 1 ? "visit" : "visits";
+              $("#vnote").style.display = "block";
+              $("#vlab").textContent = "visits from this browser";
+              show(local, local);
+            });
+        })();
+        function vpOpen(o) {
+          vp.classList.toggle("open", o);
+          vb.setAttribute("aria-expanded", o);
+        }
+        vb.addEventListener("click", function (e) { e.stopPropagation(); vpOpen(!vp.classList.contains("open")); tone(600, 0.1, "sine", 0.03); });
+        vp.addEventListener("click", function (e) { e.stopPropagation(); });
+        document.addEventListener("click", function () { vpOpen(false); });
+        addEventListener("keydown", function (e) { if (e.key === "Escape") vpOpen(false); });
+        if (window.IntersectionObserver) {
+          var io = new IntersectionObserver(function (es) {
+            es.forEach(function (x) { if (x.isIntersecting) seen[x.target.dataset.s] = 1; });
+          }, { threshold: 0.25 });
+          $$("[data-s]").forEach(function (s) { io.observe(s); });
+        }
+        setInterval(function () {
+          var t = Math.floor((Date.now() - t0) / 1000),
+            h = document.documentElement,
+            d = Math.min(100, Math.round((scrollY / Math.max(1, h.scrollHeight - innerHeight)) * 100)),
+            k = Object.keys(seen).length;
+          $("#vtm").textContent = Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0");
+          $("#vsc").textContent = d + "%";
+          $("#vse").textContent = Math.min(k, nSec) + "/" + nSec;
+          $("#vtr").style.width = Math.round((Math.min(k, nSec) / nSec) * 100) + "%";
+        }, 1000);
+
+        /* profile card */
+        var pfc = $("#pfc");
+        if (!reduce && !matchMedia("(pointer: coarse)").matches) {
+          pfc.addEventListener("pointermove", function (e) {
+            var r = pfc.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+            pfc.style.setProperty("--rx", (0.5 - y) * 12 + "deg");
+            pfc.style.setProperty("--ry", (x - 0.5) * 14 + "deg");
+            pfc.style.setProperty("--sx", x * 100 + "%");
+            pfc.style.setProperty("--sy", y * 100 + "%");
+          });
+          pfc.addEventListener("pointerleave", function () {
+            pfc.style.setProperty("--rx", "0deg");
+            pfc.style.setProperty("--ry", "0deg");
+          });
+        }
+        $$("#pfg>*").forEach(function (t) {
+          t.addEventListener("pointermove", function (e) {
+            var r = t.getBoundingClientRect();
+            t.style.setProperty("--mx", e.clientX - r.left + "px");
+            t.style.setProperty("--my", e.clientY - r.top + "px");
+          });
+        });
+        function clk() {
+          try {
+            $("#pfclk").textContent = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Manila", hour: "numeric", minute: "2-digit" }).format(new Date()) + " PHT · UTC+8";
+          } catch (e) {}
+        }
+        clk(); setInterval(clk, 15000);
+        function copyTo(btn, text, msg) {
+          try { navigator.clipboard.writeText(text); } catch (e) {}
+          var l = btn.querySelector(".v") || btn, o = l.textContent;
+          l.textContent = msg;
+          setTimeout(function () { l.textContent = o; }, 1800);
+        }
+        $("#pfm").addEventListener("click", function () { copyTo(this, "michaelangeloucquinit@gmail.com", "Copied. Now say hi."); });
+        $("#pfs").addEventListener("click", function () {
+          copyTo(this, [
+            "Michael Angelou C. Quinit - Full Stack Web Developer (AI-assisted)",
+            "Location: Iligan City, Philippines (PHT, UTC+8)",
+            "Education: BS Information Technology, Database Systems, 4th year, MSU-IIT",
+            "Experience: Independent full stack developer since 2022, 10+ apps shipped",
+            "Stack: React, TypeScript, Node.js, Supabase/PostgreSQL, Neo4j, Three.js",
+            "Availability: Open to remote work",
+            "Email: michaelangeloucquinit@gmail.com",
+            "GitHub: github.com/Aenzari",
+            "LinkedIn: linkedin.com/in/michael-angelou-quinit-9071b7410",
+            "Portfolio: " + location.href.split("#")[0],
+          ].join("\n"), "Snapshot copied");
+        });
+        /* ---- messy + generative scroll layer ---- */
+        var rnd = gsap.utils.random, pro = $("#profile"), cols = ["#8f84ff", "#ff5a2c", "#5dd68a", "#f2d14b", "#4fd4ff"];
+        function dab(x, y, burst) {
+          var e = document.createElement("i"), z = rnd(6, burst ? 22 : 14);
+          e.className = "ink";
+          e.style.cssText = "left:" + x + "px;top:" + y + "px;width:" + z + "px;height:" + z + "px;background:" + cols[Math.floor(rnd(0, 5))];
+          pro.appendChild(e);
+          gsap.fromTo(e, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(3)" });
+          gsap.to(e, { x: burst ? rnd(-140, 140) : rnd(-20, 20), y: burst ? rnd(-140, 140) : rnd(-20, 20), opacity: 0, delay: 0.25, duration: burst ? 1.1 : 0.9, onComplete: function () { e.remove(); } });
+        }
+        if (!reduce) {
+          var lt2 = 0;
+          pro.addEventListener("pointermove", function (e) {
+            var n = Date.now();
+            if (n - lt2 < 55 || e.pointerType === "touch") return;
+            lt2 = n;
+            var r = pro.getBoundingClientRect();
+            dab(e.clientX - r.left, e.clientY - r.top, false);
+          });
+          pro.addEventListener("click", function (e) {
+            var r = pro.getBoundingClientRect();
+            for (var i = 0; i < 16; i++) dab(e.clientX - r.left, e.clientY - r.top, true);
+          });
+          /* photo un-crops from a blobby window while you scroll */
+          gsap.fromTo(".pfi", { clipPath: "inset(28% 22% 28% 22% round 90px)", rotate: -6 }, { clipPath: "inset(0% 0% 0% 0% round 25px)", rotate: 0, ease: "none", scrollTrigger: { trigger: "#pfc", start: "top 95%", end: "top 40%", scrub: 0.7 } });
+          /* tiles start scattered, tidy up as they arrive */
+          $$("#pfg>*").forEach(function (t) {
+            gsap.fromTo(t, { rotation: rnd(-7, 7), x: rnd(-50, 50), y: rnd(30, 90), opacity: 0 }, { rotation: 0, x: 0, y: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: t, start: "top 99%", end: "top 68%", scrub: 0.6 } });
+          });
+          gsap.from(".pfb .tg span", { scale: 0, rotation: function () { return rnd(-35, 35); }, stagger: 0.05, ease: "back.out(2.5)", duration: 0.7, scrollTrigger: { trigger: ".pfb .tg", start: "top 92%" } });
+          gsap.fromTo(".pfgh", { xPercent: 10 }, { xPercent: -45, ease: "none", scrollTrigger: { trigger: pro, start: "top bottom", end: "bottom top", scrub: true } });
+          /* scroll velocity bends the card and the marquee */
+          var sk = gsap.quickTo("#pfc", "skewY", { duration: 0.5, ease: "power3" }), skm = gsap.quickTo(".mq", "skewX", { duration: 0.5, ease: "power3" }), idle;
+          ScrollTrigger.create({ onUpdate: function (st) {
+            var v = gsap.utils.clamp(-8, 8, st.getVelocity() / -250);
+            sk(v); skm(v);
+            clearTimeout(idle);
+            idle = setTimeout(function () { sk(0); skm(0); }, 90);
+          } });
+        }
+        /* generative scribbles, different on every load, drawn by scrolling */
+        var sv = $("#pfsc");
+        for (var i = 0; i < 3; i++) {
+          var d = "M" + rnd(0, 150) + " " + rnd(0, 1000);
+          for (var j = 1; j <= 6; j++) {
+            var x = j * 170;
+            d += " C" + rnd(x - 170, x) + " " + rnd(0, 1000) + "," + rnd(x - 170, x) + " " + rnd(0, 1000) + "," + x + " " + rnd(0, 1000);
+          }
+          var pa = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          pa.setAttribute("d", d);
+          pa.setAttribute("stroke", cols[i]);
+          sv.appendChild(pa);
+          var len = pa.getTotalLength();
+          pa.style.strokeDasharray = len;
+          pa.style.strokeDashoffset = reduce ? 0 : len;
+          if (!reduce) gsap.to(pa, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: pro, start: "top 70%", end: "bottom 40%", scrub: 0.8 + i * 0.4 } });
+        }
+        /* draggable stickers */
+        $$(".stk").forEach(function (s) {
+          var sx, sy, bx, by, on = false;
+          gsap.set(s, { rotation: rnd(-12, 12) });
+          if (!reduce) gsap.fromTo(s, { yPercent: rnd(40, 110) }, { yPercent: rnd(-110, -40), ease: "none", scrollTrigger: { trigger: "#pfc", start: "top bottom", end: "bottom top", scrub: true } });
+          s.addEventListener("pointerdown", function (e) {
+            on = true; sx = e.clientX; sy = e.clientY;
+            bx = gsap.getProperty(s, "x"); by = gsap.getProperty(s, "y");
+            try { s.setPointerCapture(e.pointerId); } catch (x) {}
+            gsap.to(s, { scale: 1.12, rotation: 0, duration: 0.2 });
+            e.stopPropagation();
+          });
+          s.addEventListener("pointermove", function (e) { if (on) gsap.set(s, { x: bx + e.clientX - sx, y: by + e.clientY - sy }); });
+          ["pointerup", "pointercancel"].forEach(function (n) {
+            s.addEventListener(n, function () {
+              if (!on) return;
+              on = false;
+              gsap.to(s, { scale: 1, rotation: rnd(-14, 14), duration: 0.6, ease: "elastic.out(1,.4)" });
+            });
+          });
+          s.addEventListener("click", function (e) { e.stopPropagation(); });
+        });
+        })();
+
         addEventListener("load", function () {
           ScrollTrigger.refresh();
         });
