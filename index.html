@@ -14,7 +14,10 @@
     <meta name="author" content="Michael Angelou C. Quinit" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#12121a" />
-    <link rel="canonical" href="https://aenzari.github.io/awwwards-portfolio/" />
+    <link
+      rel="canonical"
+      href="https://aenzari.github.io/awwwards-portfolio/"
+    />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧱%3C/text%3E%3C/svg%3E"
@@ -29,8 +32,14 @@
       property="og:description"
       content="I turn messy ideas into structured websites. React, Node, databases, security and 3D. Open to remote work."
     />
-    <meta property="og:url" content="https://aenzari.github.io/awwwards-portfolio/" />
-    <meta property="og:image" content="https://aenzari.github.io/awwwards-portfolio/images/og-image.png" />
+    <meta
+      property="og:url"
+      content="https://aenzari.github.io/awwwards-portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://aenzari.github.io/awwwards-portfolio/images/og-image.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +51,10 @@
       name="twitter:description"
       content="I turn messy ideas into structured websites. Open to remote work."
     />
-    <meta name="twitter:image" content="https://aenzari.github.io/awwwards-portfolio/images/og-image.png" />
+    <meta
+      name="twitter:image"
+      content="https://aenzari.github.io/awwwards-portfolio/images/og-image.png"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -723,8 +735,8 @@
         cursor: pointer;
         display: inline-block;
         margin-top: 30px;
-        font: 600 clamp(18px, 4vw, 48px) var(--disp);
-        overflow-wrap: anywhere;
+        font: 600 clamp(14px, 3.5vw, 48px) var(--disp);
+        white-space: nowrap;
         border-bottom: 3px solid var(--b);
       }
       #mail:focus-visible {
@@ -1048,9 +1060,8 @@
       }
       @media (min-width: 900px) {
         .cgrid {
-          grid-template-columns: 1fr 1fr;
-          gap: 70px;
-          align-items: end;
+          gap: 48px;
+          align-items: start;
         }
       }
       #rv {
@@ -1218,87 +1229,727 @@
         }
       }
       /* ---- profile interactions ---- */
-      @property --ang{syntax:"<angle>";inherits:false;initial-value:0deg}
-      .pf{display:grid;gap:50px;margin-top:40px}
-      @media(min-width:900px){.pf{grid-template-columns:minmax(300px,420px) 1fr;gap:80px;align-items:start}}
-      #pfc{perspective:900px}
-      .pfk{position:relative;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out;transform-style:preserve-3d}
-      .pfr{position:absolute;inset:-3px;border-radius:28px;background:conic-gradient(from var(--ang),var(--a),var(--b),var(--c),var(--e),var(--a));animation:spn 7s linear infinite;filter:blur(.3px)}
-      @keyframes spn{to{--ang:360deg}}
-      .pfi{position:relative;aspect-ratio:4/5;border-radius:25px;overflow:hidden;background:radial-gradient(120% 90% at 20% 10%,#2a2750,#12121a 70%);display:grid;place-items:center;margin:0}
-      .pfi .mono{font:800 clamp(90px,14vw,150px)/1 var(--disp);letter-spacing:-.06em;background:linear-gradient(135deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
-      .pfi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-      .pfi::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--sx,30%) var(--sy,20%),rgba(255,255,255,.22),transparent 60%);mix-blend-mode:overlay;pointer-events:none}
-      .pfn{position:absolute;left:14px;right:14px;bottom:14px;padding:12px 16px;border-radius:16px;background:rgba(18,18,26,.78);backdrop-filter:blur(10px);color:#efede8;transform:translateZ(40px)}
-      .pfn b{display:block;font:700 18px var(--disp)}
-      .pfn span{font-size:14px;color:#cfcdd6}
-      .pfn em{display:flex;align-items:center;gap:8px;font-style:normal;font-size:13px;margin-top:6px;color:var(--c)}
-      .pfn em i{width:8px;height:8px;border-radius:50%;background:var(--c);animation:p 2s infinite}
-      .pfg{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0 0 26px}
-      .pfg>*{all:unset;box-sizing:border-box;display:block;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:radial-gradient(180px circle at var(--mx,50%) var(--my,0%),rgba(143,132,255,.2),transparent 70%),rgba(var(--pr),.85);transition:border-color .3s}
-      .pfg>*:hover{border-color:var(--a)}
-      .pfg button{cursor:pointer}
-      @media(min-width:641px){
-        .pfg>div:nth-child(4){grid-column:1;grid-row:3}
-        .pfg #pfm{grid-column:2;grid-row:3}
+      @property --ang {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
       }
-      .pfg button:focus-visible{outline:2px solid var(--b);outline-offset:3px}
-      .pfg dt,.pfg .k{display:block;color:var(--dim);font-size:13px;margin-bottom:4px}
-      .pfg dd,.pfg .v{display:block;margin:0;font:600 17px/1.25 var(--disp);overflow-wrap:anywhere}
-      .pfg #pfm .v{font-size:clamp(12px,1.7vw,16px);letter-spacing:-.02em}
-      .pfg .v small{display:block;font:400 13px var(--body);color:var(--soft);margin-top:3px}
-      .pfb .tg{margin-bottom:6px}.pfb .edu{padding:24px;margin-bottom:22px}.pfb .edu h3{font-size:clamp(22px,2.6vw,34px)}.pfb .edu .tg{margin:0}
-      @media(max-width:640px){.stk{font-size:12px}}
-      #profile{position:relative;overflow:hidden}
-      #profile .wrap{position:relative;z-index:1}
-      .pfgh{position:absolute;top:8%;left:0;white-space:nowrap;font:800 clamp(140px,24vw,340px)/1 var(--disp);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px var(--line);pointer-events:none;z-index:0}
-      .pfsc{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.55}
-      .pfsc path{fill:none;stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke}
-      #pfc{position:relative}
-      .stk{position:absolute;z-index:3;padding:6px 12px;font:700 13px var(--disp);color:#12121a;border-radius:4px;box-shadow:3px 5px 0 rgba(0,0,0,.35);cursor:grab;touch-action:none;user-select:none;white-space:nowrap}
-      .stk:active{cursor:grabbing}
-      .ink{position:absolute;border-radius:50%;pointer-events:none;z-index:2;margin:-6px 0 0 -6px;mix-blend-mode:screen}
-      :root[data-theme="light"] .ink{mix-blend-mode:multiply}
+      .pf {
+        display: grid;
+        gap: 50px;
+        margin-top: 40px;
+      }
+      @media (min-width: 900px) {
+        .pf {
+          grid-template-columns: minmax(300px, 420px) 1fr;
+          gap: 80px;
+          align-items: start;
+        }
+      }
+      #pfc {
+        perspective: 900px;
+      }
+      .pfk {
+        position: relative;
+        transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+        transition: transform 0.18s ease-out;
+        transform-style: preserve-3d;
+      }
+      .pfr {
+        position: absolute;
+        inset: -3px;
+        border-radius: 28px;
+        background: conic-gradient(
+          from var(--ang),
+          var(--a),
+          var(--b),
+          var(--c),
+          var(--e),
+          var(--a)
+        );
+        animation: spn 7s linear infinite;
+        filter: blur(0.3px);
+      }
+      @keyframes spn {
+        to {
+          --ang: 360deg;
+        }
+      }
+      .pfi {
+        position: relative;
+        aspect-ratio: 4/5;
+        border-radius: 25px;
+        overflow: hidden;
+        background: radial-gradient(120% 90% at 20% 10%, #2a2750, #12121a 70%);
+        display: grid;
+        place-items: center;
+        margin: 0;
+      }
+      .pfi .mono {
+        font: 800 clamp(90px, 14vw, 150px)/1 var(--disp);
+        letter-spacing: -0.06em;
+        background: linear-gradient(135deg, var(--a), var(--b));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .pfi img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .pfi::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          260px circle at var(--sx, 30%) var(--sy, 20%),
+          rgba(255, 255, 255, 0.22),
+          transparent 60%
+        );
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+      .pfn {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 12px 16px;
+        border-radius: 16px;
+        background: rgba(18, 18, 26, 0.78);
+        backdrop-filter: blur(10px);
+        color: #efede8;
+        transform: translateZ(40px);
+      }
+      .pfn b {
+        display: block;
+        font: 700 18px var(--disp);
+      }
+      .pfn span {
+        font-size: 14px;
+        color: #cfcdd6;
+      }
+      .pfn em {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-style: normal;
+        font-size: 13px;
+        margin-top: 6px;
+        color: var(--c);
+      }
+      .pfn em i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--c);
+        animation: p 2s infinite;
+      }
+      .pfg {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 12px;
+        margin: 0 0 26px;
+      }
+      .pfg > * {
+        all: unset;
+        box-sizing: border-box;
+        display: block;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background:
+          radial-gradient(
+            180px circle at var(--mx, 50%) var(--my, 0%),
+            rgba(143, 132, 255, 0.2),
+            transparent 70%
+          ),
+          rgba(var(--pr), 0.85);
+        transition: border-color 0.3s;
+      }
+      .pfg > *:hover {
+        border-color: var(--a);
+      }
+      .pfg button {
+        cursor: pointer;
+      }
+      @media (min-width: 641px) {
+        .pfg > div:nth-child(4) {
+          grid-column: 1;
+          grid-row: 3;
+        }
+        .pfg #pfm {
+          grid-column: 2;
+          grid-row: 3;
+        }
+      }
+      .pfg button:focus-visible {
+        outline: 2px solid var(--b);
+        outline-offset: 3px;
+      }
+      .pfg dt,
+      .pfg .k {
+        display: block;
+        color: var(--dim);
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+      .pfg dd,
+      .pfg .v {
+        display: block;
+        margin: 0;
+        font: 600 17px/1.25 var(--disp);
+        overflow-wrap: anywhere;
+      }
+      .pfg #pfm .v {
+        font-size: clamp(12px, 1.7vw, 16px);
+        letter-spacing: -0.02em;
+      }
+      .pfg .v small {
+        display: block;
+        font: 400 13px var(--body);
+        color: var(--soft);
+        margin-top: 3px;
+      }
+      .pfb .tg {
+        margin-bottom: 6px;
+      }
+      .pfb .edu {
+        padding: 24px;
+        margin-bottom: 22px;
+      }
+      .pfb .edu h3 {
+        font-size: clamp(22px, 2.6vw, 34px);
+      }
+      .pfb .edu .tg {
+        margin: 0;
+      }
+      @media (max-width: 640px) {
+        .stk {
+          font-size: 12px;
+        }
+      }
+      #profile {
+        position: relative;
+        overflow: hidden;
+      }
+      #profile .wrap {
+        position: relative;
+        z-index: 1;
+      }
+      .pfgh {
+        position: absolute;
+        top: 8%;
+        left: 0;
+        white-space: nowrap;
+        font: 800 clamp(140px, 24vw, 340px)/1 var(--disp);
+        letter-spacing: -0.05em;
+        color: transparent;
+        -webkit-text-stroke: 1.5px var(--line);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .pfsc {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.55;
+      }
+      .pfsc path {
+        fill: none;
+        stroke-width: 3;
+        stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
+      }
+      #pfc {
+        position: relative;
+      }
+      .stk {
+        position: absolute;
+        z-index: 3;
+        padding: 6px 12px;
+        font: 700 13px var(--disp);
+        color: #12121a;
+        border-radius: 4px;
+        box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.35);
+        cursor: grab;
+        touch-action: none;
+        user-select: none;
+        white-space: nowrap;
+      }
+      .stk:active {
+        cursor: grabbing;
+      }
+      .ink {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 2;
+        margin: -6px 0 0 -6px;
+        mix-blend-mode: screen;
+      }
+      :root[data-theme="light"] .ink {
+        mix-blend-mode: multiply;
+      }
       /* ---- messy idea lab (added) ---- */
-      .mess{position:relative;border:1px solid var(--line);border-radius:22px;padding:20px;background:rgba(var(--pr),.85);backdrop-filter:blur(8px)}
-      .mess .mh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font:700 15px var(--disp)}
-      .mess .mh span{color:var(--dim);font:400 13px var(--body)}
-      #mi{all:unset;box-sizing:border-box;display:block;width:100%;min-height:74px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;font:400 16px/1.4 var(--body);color:var(--ink);background:rgba(var(--pr),.6)}
-      #mi:focus-visible{outline:2px solid var(--b);outline-offset:2px}
-      .mq2{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
-      .mq2 button{all:unset;cursor:pointer;border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:13px}
-      .mq2 button:hover{border-color:var(--a)}
-      .mq2 button:focus-visible{outline:2px solid var(--b)}
-      #mz{position:relative;min-height:230px;margin-top:16px;border:1px dashed var(--line);border-radius:16px;overflow:hidden}
-      #mz.on{border-style:solid;overflow:visible;padding:14px}
-      .sp{position:absolute;padding:5px 11px;border-radius:4px;font:700 13px var(--disp);color:#12121a;box-shadow:2px 4px 0 rgba(0,0,0,.35);white-space:nowrap}
-      .bpt{margin:0 0 8px;color:var(--dim);font-size:13px}
-      .erd{position:relative;display:flex;justify-content:space-between;gap:34px;margin-bottom:16px}
-      .erd .col{display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
-      .tb{border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;font-size:12px;background:rgba(var(--pr),.9)}
-      .tb.u{flex:1;align-self:center;max-width:42%}
-      .tb b{display:block;padding:4px 10px;background:var(--a);color:#12121a;font:700 13px var(--disp)}
-      .tb.f b{background:var(--b)}
-      .tb i{display:block;padding:1px 10px;font-style:normal;color:var(--soft)}
-      .erl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-      .erl path{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-dasharray:5 5}
-      .bpr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-      .bpr span{border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:13px}
-      .bpr span.s{border-color:var(--c)}
-      .bpo{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px;font-size:13px;color:var(--soft)}
-      .bpo b{font:700 13px var(--disp);color:var(--ink);border-radius:99px;padding:2px 10px;background:var(--line)}
-      .mess .acts{margin-top:4px;gap:10px}
-      .mess .btn{padding:10px 20px;font-size:15px}
-      .bph{margin:0 0 14px;font:600 17px/1.3 var(--disp)}
-      .bpl{margin:0 0 14px;padding-left:18px;font-size:14px;color:var(--soft)}
-      .bpl li{margin-bottom:3px}
+      .mess {
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 20px;
+        background: rgba(var(--pr), 0.85);
+        backdrop-filter: blur(8px);
+      }
+      .mess .mh {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+        font: 700 15px var(--disp);
+      }
+      .mess .mh span {
+        color: var(--dim);
+        font: 400 13px var(--body);
+      }
+      .mi-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      @media (min-width: 900px) {
+        .mi-layout {
+          grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+          align-items: start;
+        }
+      }
+      .mi-options {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .mi-options .mq2 {
+        margin: 0 0 10px;
+      }
+      #mi {
+        all: unset;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        min-height: 74px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        font: 400 16px/1.4 var(--body);
+        color: var(--ink);
+        background: rgba(var(--pr), 0.6);
+      }
+      #mi:focus-visible {
+        outline: 2px solid var(--b);
+        outline-offset: 2px;
+      }
+      .mq2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 10px 0 14px;
+      }
+      .mq2 button {
+        all: unset;
+        cursor: pointer;
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 3px 12px;
+        font-size: 13px;
+      }
+      .mq2 button:hover {
+        border-color: var(--a);
+      }
+      .mq2 button:focus-visible {
+        outline: 2px solid var(--b);
+      }
+      #mz {
+        position: relative;
+        min-height: 230px;
+        margin-top: 16px;
+        border: 1px dashed var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      #mz.on {
+        border-style: solid;
+        overflow: visible;
+        padding: 14px;
+      }
+      .sp {
+        position: absolute;
+        padding: 5px 11px;
+        border-radius: 4px;
+        font: 700 13px var(--disp);
+        color: #12121a;
+        box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.35);
+        white-space: nowrap;
+      }
+      .bpt {
+        margin: 0 0 8px;
+        color: var(--dim);
+        font-size: 13px;
+      }
+      .erd {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        gap: 34px;
+        margin-bottom: 16px;
+      }
+      .erd .col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1;
+        min-width: 0;
+      }
+      .tb {
+        border: 1.5px solid var(--ink);
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 12px;
+        background: rgba(var(--pr), 0.9);
+      }
+      .tb.u {
+        flex: 1;
+        align-self: center;
+        max-width: 42%;
+      }
+      .tb b {
+        display: block;
+        padding: 4px 10px;
+        background: var(--a);
+        color: #12121a;
+        font: 700 13px var(--disp);
+      }
+      .tb.f b {
+        background: var(--b);
+      }
+      .tb i {
+        display: block;
+        padding: 1px 10px;
+        font-style: normal;
+        color: var(--soft);
+      }
+      .erl {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: visible;
+      }
+      .erl path {
+        fill: none;
+        stroke: var(--c);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 5 5;
+      }
+      .bpr {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+      .bpr span {
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        padding: 2px 12px;
+        font-size: 13px;
+      }
+      .bpr span.s {
+        border-color: var(--c);
+      }
+      .bpo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+        margin: 0 0 14px;
+        font-size: 13px;
+        color: var(--soft);
+      }
+      .bpo b {
+        font: 700 13px var(--disp);
+        color: var(--ink);
+        border-radius: 99px;
+        padding: 2px 10px;
+        background: var(--line);
+      }
+      .mess .acts {
+        margin-top: 4px;
+        gap: 10px;
+      }
+      .mess .btn {
+        padding: 10px 20px;
+        font-size: 15px;
+      }
+      .bph {
+        margin: 0 0 14px;
+        font: 600 17px/1.3 var(--disp);
+      }
+      .bpl {
+        margin: 0 0 14px;
+        padding-left: 18px;
+        font-size: 14px;
+        color: var(--soft);
+      }
+      .bpl li {
+        margin-bottom: 3px;
+      }
+      /* ---- messy idea lab: generative result board (v2) ---- */
+      #mz.on {
+        border: 0;
+        padding: 0;
+        min-height: 0;
+        margin-top: 18px;
+      }
+      .board {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+      .bh {
+        margin: 0;
+        font: 700 21px/1.45 var(--disp);
+      }
+      .bh mark {
+        color: #12121a;
+        padding: 1px 8px;
+        border-radius: 4px;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        display: inline-block;
+        transform: rotate(-1.5deg);
+        margin: 0 1px;
+      }
+      .bsec h4 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 12px;
+        font: 700 11px var(--disp);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--dim);
+      }
+      .bsec h4::after {
+        content: "";
+        flex: 1;
+        height: 0;
+        border-top: 1.5px dashed var(--line);
+      }
+      .road {
+        position: relative;
+        padding-left: 38px;
+      }
+      .road svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 24px;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .road svg path {
+        fill: none;
+        stroke: var(--ink);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 2 7;
+        opacity: 0.55;
+      }
+      .rn {
+        position: relative;
+        margin-bottom: 16px;
+      }
+      .rn:last-child {
+        margin-bottom: 0;
+      }
+      .rn i {
+        position: absolute;
+        left: -38px;
+        top: -1px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font: 700 13px var(--disp);
+        font-style: normal;
+        color: #12121a;
+        box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.3);
+      }
+      .rn b {
+        display: block;
+        font: 700 15px/1.25 var(--disp);
+      }
+      .rn span {
+        display: block;
+        font-size: 13px;
+        color: var(--soft);
+        line-height: 1.4;
+      }
+      .scr {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+        gap: 14px 12px;
+      }
+      .pgc {
+        margin: 0;
+        padding: 6px 6px 8px;
+        border-radius: 8px;
+        background: rgba(var(--pr), 0.95);
+        border: 1px solid var(--line);
+        box-shadow: 3px 5px 0 rgba(0, 0, 0, 0.22);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
+        cursor: default;
+      }
+      .pgc:hover {
+        transform: rotate(0) translateY(-3px) scale(1.04) !important;
+        box-shadow: 5px 9px 0 rgba(0, 0, 0, 0.25);
+        z-index: 2;
+      }
+      .pgc svg {
+        display: block;
+        width: 100%;
+        height: auto;
+        color: var(--ink);
+      }
+      .pgc figcaption {
+        margin-top: 6px;
+        font: 700 12px/1.2 var(--disp);
+        text-align: center;
+      }
+      .stks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px 8px;
+      }
+      .stks span {
+        padding: 5px 12px;
+        border-radius: 4px;
+        font: 700 13px var(--disp);
+        color: #12121a;
+        box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.3);
+        cursor: grab;
+      }
+      .chk {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+      .chk li {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 14px;
+        line-height: 1.4;
+        color: var(--soft);
+      }
+      .chk svg {
+        flex: none;
+        width: 20px;
+        height: 20px;
+        margin-top: 1px;
+        overflow: visible;
+      }
+      .chk svg path {
+        fill: none;
+        stroke: var(--c);
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .notes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 16px 12px;
+      }
+      .note {
+        position: relative;
+        padding: 16px 12px 12px;
+        background: #f2d14b;
+        color: #12121a;
+        font: 600 13px/1.35 var(--body);
+        box-shadow: 3px 6px 0 rgba(0, 0, 0, 0.28);
+        border-radius: 2px;
+      }
+      .note:nth-child(2n) {
+        background: #8f84ff;
+      }
+      .note:nth-child(3n) {
+        background: #5dd68a;
+      }
+      .note::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -9px;
+        width: 46px;
+        height: 16px;
+        margin-left: -23px;
+        background: rgba(255, 255, 255, 0.55);
+        transform: rotate(-3deg);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      }
+      .board .acts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 4px;
+      }
+      .board .erd {
+        margin-bottom: 0;
+      }
       /* ---- messy heading (added) ---- */
-      #mh .ml,#mh .tl{display:block}
-      #mh .w{display:inline-block;white-space:nowrap}
-      #mh .mc,#mh .tc{display:inline-block;will-change:transform}
-      #mh .mc{cursor:crosshair}
-      #mh .tl{position:relative;padding-bottom:.12em}
-      #mh .ul{display:block;height:.07em;min-height:4px;width:100%;margin-top:.04em;background:linear-gradient(90deg,var(--a),var(--b),var(--c));transform-origin:0 50%}
+      #mh .ml,
+      #mh .tl {
+        display: block;
+      }
+      #mh .w {
+        display: inline-block;
+        white-space: nowrap;
+      }
+      #mh .mc,
+      #mh .tc {
+        display: inline-block;
+        will-change: transform;
+      }
+      #mh .mc {
+        cursor: crosshair;
+      }
+      #mh .tl {
+        position: relative;
+        padding-bottom: 0.12em;
+      }
+      #mh .ul {
+        display: block;
+        height: 0.07em;
+        min-height: 4px;
+        width: 100%;
+        margin-top: 0.04em;
+        background: linear-gradient(90deg, var(--a), var(--b), var(--c));
+        transform-origin: 0 50%;
+      }
     </style>
   </head>
   <body>
@@ -1316,7 +1967,8 @@
     </div>
     <nav>
       <a href="#top">Michael Angelou C. Quinit</a>
-      <span class="visitor-count" id="visitor-count" aria-live="polite"> Portfolio Views Counter: …</span
+      <span class="visitor-count" id="visitor-count" aria-live="polite">
+        Portfolio Views Counter: …</span
       >
     </nav>
     <div class="ctl">
@@ -1437,8 +2089,16 @@
       </section>
 
       <section id="profile" class="veil" data-s="Profile">
-        <div class="pfgh" aria-hidden="true">MICHAEL ✦ QUINIT ✦ MICHAEL ✦ QUINIT</div>
-        <svg class="pfsc" id="pfsc" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="pfgh" aria-hidden="true">
+          MICHAEL ✦ QUINIT ✦ MICHAEL ✦ QUINIT
+        </div>
+        <svg
+          class="pfsc"
+          id="pfsc"
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        ></svg>
         <div class="wrap">
           <p class="lab">Profile, education and résumé</p>
           <h2 class="sec-h">The person behind the stack.</h2>
@@ -1448,7 +2108,13 @@
                 <div class="pfr"></div>
                 <figure class="pfi">
                   <span class="mono" aria-hidden="true">MQ</span>
-                  <img src="images/profile_image.png" alt="Portrait of Michael Angelou C. Quinit" width="400" height="500" onerror="this.remove()" />
+                  <img
+                    src="images/profile_image.png"
+                    alt="Portrait of Michael Angelou C. Quinit"
+                    width="400"
+                    height="500"
+                    onerror="this.remove()"
+                  />
                   <figcaption class="pfn">
                     <b>Michael Angelou C. Quinit</b>
                     <span>Full Stack Web Developer</span>
@@ -1456,10 +2122,26 @@
                   </figcaption>
                 </figure>
               </div>
-              <span class="stk" style="top:-14px;left:-14px;background:var(--d)">since 2022</span>
-              <span class="stk" style="top:24%;right:-12px;background:var(--c)">schema first</span>
-              <span class="stk" style="bottom:22%;left:-16px;background:var(--e)">RLS. always.</span>
-              <span class="stk" style="bottom:-12px;right:12%;background:var(--b)">drag me ✦</span>
+              <span
+                class="stk"
+                style="top: -14px; left: -14px; background: var(--d)"
+                >since 2022</span
+              >
+              <span
+                class="stk"
+                style="top: 24%; right: -12px; background: var(--c)"
+                >schema first</span
+              >
+              <span
+                class="stk"
+                style="bottom: 22%; left: -16px; background: var(--e)"
+                >RLS. always.</span
+              >
+              <span
+                class="stk"
+                style="bottom: -12px; right: 12%; background: var(--b)"
+                >drag me ✦</span
+              >
             </div>
             <div class="pfb">
               <p class="lede">
@@ -1471,17 +2153,65 @@
                 the review and the security.
               </p>
               <dl class="pfg" id="pfg">
-                <div><dt>Role</dt><dd>Full Stack Web Developer<small style="display:block;font:400 13px var(--body);color:var(--soft)">AI-assisted workflow</small></dd></div>
-                <div><dt>Based in</dt><dd>Iligan City, Philippines<small style="display:block;font:400 13px var(--body);color:var(--soft)" id="pfclk">PHT · UTC+8</small></dd></div>
-                <div><dt>Experience</dt><dd>Independent since 2022<small style="display:block;font:400 13px var(--body);color:var(--soft)">10+ web apps shipped</small></dd></div>
-                <div><dt>Availability</dt><dd>Open to remote work</dd></div>
-                <button id="pfm" aria-label="Copy email address"><span class="k">Email (tap to copy)</span><span class="v">michaelangeloucquinit<br>@gmail.com</span></button>
+                <div>
+                  <dt>Role</dt>
+                  <dd>
+                    Full Stack Web Developer<small
+                      style="
+                        display: block;
+                        font: 400 13px var(--body);
+                        color: var(--soft);
+                      "
+                      >AI-assisted workflow</small
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt>Based in</dt>
+                  <dd>
+                    Iligan City, Philippines<small
+                      style="
+                        display: block;
+                        font: 400 13px var(--body);
+                        color: var(--soft);
+                      "
+                      id="pfclk"
+                      >PHT · UTC+8</small
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt>Experience</dt>
+                  <dd>
+                    Independent since 2022<small
+                      style="
+                        display: block;
+                        font: 400 13px var(--body);
+                        color: var(--soft);
+                      "
+                      >10+ web apps shipped</small
+                    >
+                  </dd>
+                </div>
+                <div>
+                  <dt>Availability</dt>
+                  <dd>Open to remote work</dd>
+                </div>
+                <button id="pfm" aria-label="Copy email address">
+                  <span class="k">Email (tap to copy)</span
+                  ><span class="v">michaelangeloucquinit<br />@gmail.com</span>
+                </button>
               </dl>
               <div class="edu">
                 <h3>BS Information Technology Major in Database Systems</h3>
-                <p>4th year · Mindanao State University – Iligan Institute of Technology · Iligan City, Philippines</p>
+                <p>
+                  4th year · Mindanao State University – Iligan Institute of
+                  Technology · Iligan City, Philippines
+                </p>
                 <div class="tg">
-                  <span>Database design and administration</span><span>Information assurance and security</span><span>Web development</span><span>Systems analysis</span>
+                  <span>Database design and administration</span
+                  ><span>Information assurance and security</span
+                  ><span>Web development</span><span>Systems analysis</span>
                 </div>
               </div>
               <p class="lede" style="margin: 0 0 26px">
@@ -1490,7 +2220,9 @@
                 what I ship, and shipping shows me what to study next.
               </p>
               <div class="tg">
-                <span>React</span><span>TypeScript</span><span>Node.js</span><span>Supabase</span><span>PostgreSQL</span><span>Neo4j</span><span>Three.js</span><span>Information security</span>
+                <span>React</span><span>TypeScript</span><span>Node.js</span
+                ><span>Supabase</span><span>PostgreSQL</span><span>Neo4j</span
+                ><span>Three.js</span><span>Information security</span>
               </div>
               <div class="acts">
                 <button class="btn pri" id="rvo">View résumé</button>
@@ -2112,20 +2844,40 @@
               </p>
             </div>
             <div class="mess" id="ms">
-              <div class="mh"><b>Messy idea lab</b><span>type anything, get a plan</span></div>
-              <label for="mi" style="position:absolute;left:-9999px">Describe your messy idea</label>
-              <textarea id="mi" rows="3" placeholder="Type anything: a business problem, a school project, a half-baked app, a website that needs fixing..."></textarea>
-              <div class="mq2" id="mq2">
-                <button>I run a small bakery and need orders online</button><button>I want to turn my Excel sheets into a real system</button><button>my website is slow and looks old</button><button>something fun in 3D for my brand</button><button>a way to track attendance in my school</button>
+              <div class="mh">
+                <b>Messy idea lab</b><span>type anything, get a plan</span>
               </div>
-              <button class="btn pri" id="mgo">Structure it</button>
+              <div class="mi-layout">
+                <div>
+                  <label for="mi" style="position: absolute; left: -9999px"
+                    >Describe your messy idea</label
+                  >
+                  <textarea
+                    id="mi"
+                    rows="3"
+                    placeholder="Type anything: a business problem, a school project, a half-baked app, a website that needs fixing..."
+                  ></textarea>
+                </div>
+                <div class="mi-options">
+                  <div class="mq2" id="mq2">
+                    <button>I run a small bakery and need orders online</button
+                    ><button>
+                      I want to turn my Excel sheets into a real system</button
+                    ><button>my website is slow and looks old</button
+                    ><button>something fun in 3D for my brand</button
+                    ><button>a way to track attendance in my school</button>
+                  </div>
+                  <button class="btn pri" id="mgo">Structure it</button>
+                </div>
+              </div>
               <div id="mz" aria-live="polite"></div>
             </div>
           </div>
+        </div>
       </section>
     </main>
     <footer>
-      <span>©2026 Michael Angelou C. Quinit. Designed and developed by me.</span
+      <span>©2026 Michael Angelou C. Quinit. Developed by me.</span
       ><span
         ><a href="https://github.com/Aenzari" target="_blank" rel="noopener"
           >GitHub</a
@@ -2266,7 +3018,8 @@
           var counter = $("#visitor-count"),
             hit =
               "https://abacus.jasoncameron.dev/hit/aenzari.github.io/awwwards-portfolio",
-            get = "https://abacus.jasoncameron.dev/get/aenzari.github.io/awwwards-portfolio",
+            get =
+              "https://abacus.jasoncameron.dev/get/aenzari.github.io/awwwards-portfolio",
             tracked = false;
           if (!counter) return;
           try {
@@ -2274,14 +3027,16 @@
           } catch (e) {}
           fetch(tracked ? get : hit, { cache: "no-store" })
             .then(function (response) {
-              if (!response.ok) throw new Error("Visitor counter request failed");
+              if (!response.ok)
+                throw new Error("Visitor counter request failed");
               return response.json();
             })
             .then(function (data) {
               if (!data || typeof data.value !== "number")
                 throw new Error("Visitor counter returned an invalid value");
               counter.textContent =
-                "Portfolio Views Counter: " + data.value.toLocaleString("en-US");
+                "Portfolio Views Counter: " +
+                data.value.toLocaleString("en-US");
               if (!tracked) {
                 try {
                   sessionStorage.setItem("portfolio-visit-tracked", "1");
@@ -3347,23 +4102,48 @@
         /* toggles */
         /* Music: one toggle for the background track and the UI tones */
         (function () {
-          var bm = $("#bm"), a = null, on = false, SRC = "audio/ambient.mp3", VOL = 0.25;
-          function play() { var pr = a.play(); if (pr && pr.catch) pr.catch(function () {}); }
+          var bm = $("#bm"),
+            a = null,
+            on = false,
+            SRC = "audio/ambient.mp3",
+            VOL = 0.25;
+          function play() {
+            var pr = a.play();
+            if (pr && pr.catch) pr.catch(function () {});
+          }
           bm.addEventListener("click", function () {
             if (!a) {
-              a = new Audio(SRC); a.loop = true; a.volume = 0;
-              a.addEventListener("error", function () { a = null; bm.textContent = "Music: no file"; });
+              a = new Audio(SRC);
+              a.loop = true;
+              a.volume = 0;
+              a.addEventListener("error", function () {
+                a = null;
+                bm.textContent = "Music: no file";
+              });
             }
-            on = !on; sndOn = on;
+            on = !on;
+            sndOn = on;
             bm.textContent = "Music: " + (on ? "on" : "off");
             bm.setAttribute("aria-pressed", on);
             tone(660, 0.15, "sine", 0.05);
             if (!a) return;
-            if (on) { play(); gsap.to(a, { volume: VOL, duration: 1.5 }); }
-            else gsap.to(a, { volume: 0, duration: 0.8, onComplete: function () { a.pause(); } });
+            if (on) {
+              play();
+              gsap.to(a, { volume: VOL, duration: 1.5 });
+            } else
+              gsap.to(a, {
+                volume: 0,
+                duration: 0.8,
+                onComplete: function () {
+                  a.pause();
+                },
+              });
           });
           document.addEventListener("visibilitychange", function () {
-            if (a && on) { if (document.hidden) a.pause(); else play(); }
+            if (a && on) {
+              if (document.hidden) a.pause();
+              else play();
+            }
           });
         })();
         $("#bt").addEventListener("click", function () {
@@ -3483,274 +4263,1349 @@
           if (e.key === "Escape") rvClose();
         });
         (function () {
-        /* profile card */
-        var pfc = $("#pfc");
-        if (!reduce && !matchMedia("(pointer: coarse)").matches) {
-          pfc.addEventListener("pointermove", function (e) {
-            var r = pfc.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-            pfc.style.setProperty("--rx", (0.5 - y) * 12 + "deg");
-            pfc.style.setProperty("--ry", (x - 0.5) * 14 + "deg");
-            pfc.style.setProperty("--sx", x * 100 + "%");
-            pfc.style.setProperty("--sy", y * 100 + "%");
-          });
-          pfc.addEventListener("pointerleave", function () {
-            pfc.style.setProperty("--rx", "0deg");
-            pfc.style.setProperty("--ry", "0deg");
-          });
-        }
-        $$("#pfg>*").forEach(function (t) {
-          t.addEventListener("pointermove", function (e) {
-            var r = t.getBoundingClientRect();
-            t.style.setProperty("--mx", e.clientX - r.left + "px");
-            t.style.setProperty("--my", e.clientY - r.top + "px");
-          });
-        });
-        function clk() {
-          try {
-            $("#pfclk").textContent = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Manila", hour: "numeric", minute: "2-digit" }).format(new Date()) + " PHT · UTC+8";
-          } catch (e) {}
-        }
-        clk(); setInterval(clk, 15000);
-        function copyTo(btn, text, msg) {
-          try { navigator.clipboard.writeText(text); } catch (e) {}
-          var l = btn.querySelector(".v") || btn, o = l.textContent;
-          l.textContent = msg;
-          setTimeout(function () { l.textContent = o; }, 1800);
-        }
-        $("#pfm").addEventListener("click", function () { copyTo(this, "michaelangeloucquinit@gmail.com", "Copied. Now say hi."); });
-        /* ---- messy + generative scroll layer ---- */
-        var rnd = gsap.utils.random, pro = $("#profile"), cols = ["#8f84ff", "#ff5a2c", "#5dd68a", "#f2d14b", "#4fd4ff"];
-        function dab(x, y, burst) {
-          var e = document.createElement("i"), z = rnd(6, burst ? 22 : 14);
-          e.className = "ink";
-          e.style.cssText = "left:" + x + "px;top:" + y + "px;width:" + z + "px;height:" + z + "px;background:" + cols[Math.floor(rnd(0, 5))];
-          pro.appendChild(e);
-          gsap.fromTo(e, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(3)" });
-          gsap.to(e, { x: burst ? rnd(-140, 140) : rnd(-20, 20), y: burst ? rnd(-140, 140) : rnd(-20, 20), opacity: 0, delay: 0.25, duration: burst ? 1.1 : 0.9, onComplete: function () { e.remove(); } });
-        }
-        if (!reduce) {
-          var lt2 = 0;
-          pro.addEventListener("pointermove", function (e) {
-            var n = Date.now();
-            if (n - lt2 < 55 || e.pointerType === "touch") return;
-            lt2 = n;
-            var r = pro.getBoundingClientRect();
-            dab(e.clientX - r.left, e.clientY - r.top, false);
-          });
-          pro.addEventListener("click", function (e) {
-            var r = pro.getBoundingClientRect();
-            for (var i = 0; i < 16; i++) dab(e.clientX - r.left, e.clientY - r.top, true);
-          });
-          /* photo un-crops from a blobby window while you scroll */
-          gsap.fromTo(".pfi", { clipPath: "inset(28% 22% 28% 22% round 90px)", rotate: -6 }, { clipPath: "inset(0% 0% 0% 0% round 25px)", rotate: 0, ease: "none", scrollTrigger: { trigger: "#pfc", start: "top 95%", end: "top 40%", scrub: 0.7 } });
-          /* tiles start scattered, tidy up as they arrive */
-          $$("#pfg>*").forEach(function (t) {
-            gsap.fromTo(t, { rotation: rnd(-7, 7), x: rnd(-50, 50), y: rnd(30, 90), opacity: 0 }, { rotation: 0, x: 0, y: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: t, start: "top 99%", end: "top 68%", scrub: 0.6 } });
-          });
-          gsap.from(".pfb .tg span", { scale: 0, rotation: function () { return rnd(-35, 35); }, stagger: 0.05, ease: "back.out(2.5)", duration: 0.7, scrollTrigger: { trigger: ".pfb .tg", start: "top 92%" } });
-          gsap.fromTo(".pfgh", { xPercent: 10 }, { xPercent: -45, ease: "none", scrollTrigger: { trigger: pro, start: "top bottom", end: "bottom top", scrub: true } });
-          /* scroll velocity bends the card and the marquee */
-          var sk = gsap.quickTo("#pfc", "skewY", { duration: 0.5, ease: "power3" }), skm = gsap.quickTo(".mq", "skewX", { duration: 0.5, ease: "power3" }), idle;
-          ScrollTrigger.create({ onUpdate: function (st) {
-            var v = gsap.utils.clamp(-8, 8, st.getVelocity() / -250);
-            sk(v); skm(v);
-            clearTimeout(idle);
-            idle = setTimeout(function () { sk(0); skm(0); }, 90);
-          } });
-        }
-        /* generative scribbles, different on every load, drawn by scrolling */
-        var sv = $("#pfsc");
-        for (var i = 0; i < 3; i++) {
-          var d = "M" + rnd(0, 150) + " " + rnd(0, 1000);
-          for (var j = 1; j <= 6; j++) {
-            var x = j * 170;
-            d += " C" + rnd(x - 170, x) + " " + rnd(0, 1000) + "," + rnd(x - 170, x) + " " + rnd(0, 1000) + "," + x + " " + rnd(0, 1000);
+          /* profile card */
+          var pfc = $("#pfc");
+          if (!reduce && !matchMedia("(pointer: coarse)").matches) {
+            pfc.addEventListener("pointermove", function (e) {
+              var r = pfc.getBoundingClientRect(),
+                x = (e.clientX - r.left) / r.width,
+                y = (e.clientY - r.top) / r.height;
+              pfc.style.setProperty("--rx", (0.5 - y) * 12 + "deg");
+              pfc.style.setProperty("--ry", (x - 0.5) * 14 + "deg");
+              pfc.style.setProperty("--sx", x * 100 + "%");
+              pfc.style.setProperty("--sy", y * 100 + "%");
+            });
+            pfc.addEventListener("pointerleave", function () {
+              pfc.style.setProperty("--rx", "0deg");
+              pfc.style.setProperty("--ry", "0deg");
+            });
           }
-          var pa = document.createElementNS("http://www.w3.org/2000/svg", "path");
-          pa.setAttribute("d", d);
-          pa.setAttribute("stroke", cols[i]);
-          sv.appendChild(pa);
-          var len = pa.getTotalLength();
-          pa.style.strokeDasharray = len;
-          pa.style.strokeDashoffset = reduce ? 0 : len;
-          if (!reduce) gsap.to(pa, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: pro, start: "top 70%", end: "bottom 40%", scrub: 0.8 + i * 0.4 } });
-        }
-        /* draggable stickers */
-        $$(".stk").forEach(function (s) {
-          var sx, sy, bx, by, on = false;
-          gsap.set(s, { rotation: rnd(-12, 12) });
-          if (!reduce) gsap.fromTo(s, { yPercent: rnd(40, 110) }, { yPercent: rnd(-110, -40), ease: "none", scrollTrigger: { trigger: "#pfc", start: "top bottom", end: "bottom top", scrub: true } });
-          s.addEventListener("pointerdown", function (e) {
-            on = true; sx = e.clientX; sy = e.clientY;
-            bx = gsap.getProperty(s, "x"); by = gsap.getProperty(s, "y");
-            try { s.setPointerCapture(e.pointerId); } catch (x) {}
-            gsap.to(s, { scale: 1.12, rotation: 0, duration: 0.2 });
-            e.stopPropagation();
-          });
-          s.addEventListener("pointermove", function (e) { if (on) gsap.set(s, { x: bx + e.clientX - sx, y: by + e.clientY - sy }); });
-          ["pointerup", "pointercancel"].forEach(function (n) {
-            s.addEventListener(n, function () {
-              if (!on) return;
-              on = false;
-              gsap.to(s, { scale: 1, rotation: rnd(-14, 14), duration: 0.6, ease: "elastic.out(1,.4)" });
+          $$("#pfg>*").forEach(function (t) {
+            t.addEventListener("pointermove", function (e) {
+              var r = t.getBoundingClientRect();
+              t.style.setProperty("--mx", e.clientX - r.left + "px");
+              t.style.setProperty("--my", e.clientY - r.top + "px");
             });
           });
-          s.addEventListener("click", function (e) { e.stopPropagation(); });
-        });
+          function clk() {
+            try {
+              $("#pfclk").textContent =
+                new Intl.DateTimeFormat("en-US", {
+                  timeZone: "Asia/Manila",
+                  hour: "numeric",
+                  minute: "2-digit",
+                }).format(new Date()) + " PHT · UTC+8";
+            } catch (e) {}
+          }
+          clk();
+          setInterval(clk, 15000);
+          function copyTo(btn, text, msg) {
+            try {
+              navigator.clipboard.writeText(text);
+            } catch (e) {}
+            var l = btn.querySelector(".v") || btn,
+              o = l.textContent;
+            l.textContent = msg;
+            setTimeout(function () {
+              l.textContent = o;
+            }, 1800);
+          }
+          $("#pfm").addEventListener("click", function () {
+            copyTo(
+              this,
+              "michaelangeloucquinit@gmail.com",
+              "Copied. Now say hi.",
+            );
+          });
+          /* ---- messy + generative scroll layer ---- */
+          var rnd = gsap.utils.random,
+            pro = $("#profile"),
+            cols = ["#8f84ff", "#ff5a2c", "#5dd68a", "#f2d14b", "#4fd4ff"];
+          function dab(x, y, burst) {
+            var e = document.createElement("i"),
+              z = rnd(6, burst ? 22 : 14);
+            e.className = "ink";
+            e.style.cssText =
+              "left:" +
+              x +
+              "px;top:" +
+              y +
+              "px;width:" +
+              z +
+              "px;height:" +
+              z +
+              "px;background:" +
+              cols[Math.floor(rnd(0, 5))];
+            pro.appendChild(e);
+            gsap.fromTo(
+              e,
+              { scale: 0 },
+              { scale: 1, duration: 0.3, ease: "back.out(3)" },
+            );
+            gsap.to(e, {
+              x: burst ? rnd(-140, 140) : rnd(-20, 20),
+              y: burst ? rnd(-140, 140) : rnd(-20, 20),
+              opacity: 0,
+              delay: 0.25,
+              duration: burst ? 1.1 : 0.9,
+              onComplete: function () {
+                e.remove();
+              },
+            });
+          }
+          if (!reduce) {
+            var lt2 = 0;
+            pro.addEventListener("pointermove", function (e) {
+              var n = Date.now();
+              if (n - lt2 < 55 || e.pointerType === "touch") return;
+              lt2 = n;
+              var r = pro.getBoundingClientRect();
+              dab(e.clientX - r.left, e.clientY - r.top, false);
+            });
+            pro.addEventListener("click", function (e) {
+              var r = pro.getBoundingClientRect();
+              for (var i = 0; i < 16; i++)
+                dab(e.clientX - r.left, e.clientY - r.top, true);
+            });
+            /* photo un-crops from a blobby window while you scroll */
+            gsap.fromTo(
+              ".pfi",
+              { clipPath: "inset(28% 22% 28% 22% round 90px)", rotate: -6 },
+              {
+                clipPath: "inset(0% 0% 0% 0% round 25px)",
+                rotate: 0,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: "#pfc",
+                  start: "top 95%",
+                  end: "top 40%",
+                  scrub: 0.7,
+                },
+              },
+            );
+            /* tiles start scattered, tidy up as they arrive */
+            $$("#pfg>*").forEach(function (t) {
+              gsap.fromTo(
+                t,
+                {
+                  rotation: rnd(-7, 7),
+                  x: rnd(-50, 50),
+                  y: rnd(30, 90),
+                  opacity: 0,
+                },
+                {
+                  rotation: 0,
+                  x: 0,
+                  y: 0,
+                  opacity: 1,
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: t,
+                    start: "top 99%",
+                    end: "top 68%",
+                    scrub: 0.6,
+                  },
+                },
+              );
+            });
+            gsap.from(".pfb .tg span", {
+              scale: 0,
+              rotation: function () {
+                return rnd(-35, 35);
+              },
+              stagger: 0.05,
+              ease: "back.out(2.5)",
+              duration: 0.7,
+              scrollTrigger: { trigger: ".pfb .tg", start: "top 92%" },
+            });
+            gsap.fromTo(
+              ".pfgh",
+              { xPercent: 10 },
+              {
+                xPercent: -45,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: pro,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: true,
+                },
+              },
+            );
+            /* scroll velocity bends the card and the marquee */
+            var sk = gsap.quickTo("#pfc", "skewY", {
+                duration: 0.5,
+                ease: "power3",
+              }),
+              skm = gsap.quickTo(".mq", "skewX", {
+                duration: 0.5,
+                ease: "power3",
+              }),
+              idle;
+            ScrollTrigger.create({
+              onUpdate: function (st) {
+                var v = gsap.utils.clamp(-8, 8, st.getVelocity() / -250);
+                sk(v);
+                skm(v);
+                clearTimeout(idle);
+                idle = setTimeout(function () {
+                  sk(0);
+                  skm(0);
+                }, 90);
+              },
+            });
+          }
+          /* generative scribbles, different on every load, drawn by scrolling */
+          var sv = $("#pfsc");
+          for (var i = 0; i < 3; i++) {
+            var d = "M" + rnd(0, 150) + " " + rnd(0, 1000);
+            for (var j = 1; j <= 6; j++) {
+              var x = j * 170;
+              d +=
+                " C" +
+                rnd(x - 170, x) +
+                " " +
+                rnd(0, 1000) +
+                "," +
+                rnd(x - 170, x) +
+                " " +
+                rnd(0, 1000) +
+                "," +
+                x +
+                " " +
+                rnd(0, 1000);
+            }
+            var pa = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "path",
+            );
+            pa.setAttribute("d", d);
+            pa.setAttribute("stroke", cols[i]);
+            sv.appendChild(pa);
+            var len = pa.getTotalLength();
+            pa.style.strokeDasharray = len;
+            pa.style.strokeDashoffset = reduce ? 0 : len;
+            if (!reduce)
+              gsap.to(pa, {
+                strokeDashoffset: 0,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: pro,
+                  start: "top 70%",
+                  end: "bottom 40%",
+                  scrub: 0.8 + i * 0.4,
+                },
+              });
+          }
+          /* draggable stickers */
+          $$(".stk").forEach(function (s) {
+            var sx,
+              sy,
+              bx,
+              by,
+              on = false;
+            gsap.set(s, { rotation: rnd(-12, 12) });
+            if (!reduce)
+              gsap.fromTo(
+                s,
+                { yPercent: rnd(40, 110) },
+                {
+                  yPercent: rnd(-110, -40),
+                  ease: "none",
+                  scrollTrigger: {
+                    trigger: "#pfc",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                  },
+                },
+              );
+            s.addEventListener("pointerdown", function (e) {
+              on = true;
+              sx = e.clientX;
+              sy = e.clientY;
+              bx = gsap.getProperty(s, "x");
+              by = gsap.getProperty(s, "y");
+              try {
+                s.setPointerCapture(e.pointerId);
+              } catch (x) {}
+              gsap.to(s, { scale: 1.12, rotation: 0, duration: 0.2 });
+              e.stopPropagation();
+            });
+            s.addEventListener("pointermove", function (e) {
+              if (on)
+                gsap.set(s, { x: bx + e.clientX - sx, y: by + e.clientY - sy });
+            });
+            ["pointerup", "pointercancel"].forEach(function (n) {
+              s.addEventListener(n, function () {
+                if (!on) return;
+                on = false;
+                gsap.to(s, {
+                  scale: 1,
+                  rotation: rnd(-14, 14),
+                  duration: 0.6,
+                  ease: "elastic.out(1,.4)",
+                });
+              });
+            });
+            s.addEventListener("click", function (e) {
+              e.stopPropagation();
+            });
+          });
         })();
         (function () {
-          var ms = $("#ms"), mi = $("#mi"), mz = $("#mz"), rnd = gsap.utils.random, busy = false;
+          var ms = $("#ms"),
+            mi = $("#mi"),
+            mz = $("#mz"),
+            rnd = gsap.utils.random,
+            busy = false;
           var C = ["#f2d14b", "#5dd68a", "#4fd4ff", "#ff5a2c", "#8f84ff"];
-          var DEF = ["login?", "points", "maybe 3D", "dashboard", "payments??", "chat", "admin", "idk mobile"];
-          var STOP = "a an the and or for of to in on with that this app apps website site web platform system want need like make build create where who can will would should could my our your their it is are be have has get give some thing things user users people about into from them they what how when also just very more one two idea ideas something someone anything but too really maybe".split(" ");
+          var DEF = [
+            "login?",
+            "points",
+            "maybe 3D",
+            "dashboard",
+            "payments??",
+            "chat",
+            "admin",
+            "idk mobile",
+          ];
+          var STOP =
+            "a an the and or for of to in on with that this app apps website site web platform system want need like make build create where who can will would should could my our your their it is are be have has get give some thing things user users people about into from them they what how when also just very more one two idea ideas something someone anything but too really maybe".split(
+              " ",
+            );
           var BASE = ["React", "Node.js", "Supabase (PostgreSQL)"];
           /* what Michael can deliver, matched from whatever the visitor types */
           var K = [
-            { l: "an online store", re: /shop|store|sell|buy|order|cart|market|product|checkout|pay|bakery|menu|restaurant|retail/, pg: ["Catalog", "Product page", "Cart", "Checkout", "Order tracking", "Admin orders"], tb: [["products", "name", "price", "stock"], ["orders", "status", "total"], ["order_items", "qty"]], st: ["Checkout and receipt flow"], g: ["Catalog, cart and order tracking", "Admin view to manage orders", "Payment flow that fits your market, like the GCash receipt checks in my Kusy project"], q: "How do your customers pay and receive things today?" },
-            { l: "a booking system", re: /book|appoint|schedul|reserv|calendar|slot|salon|clinic|rental/, pg: ["Services", "Pick a slot", "Confirmation", "Admin calendar"], tb: [["services", "name", "duration", "price"], ["bookings", "service_id", "slot", "status"]], st: ["Email or SMS reminders"], g: ["Online booking that blocks double-bookings", "Calendar for you to manage everything"], q: "How long is a typical appointment, and who handles them?" },
-            { l: "a learning platform", re: /learn|school|student|class|course|quiz|lesson|teach|attendance|grade|exam|study|tutor|notes/, pg: ["Courses", "Lesson", "Progress", "Leaderboard"], tb: [["courses", "title", "level"], ["lessons", "course_id", "content"], ["progress", "lesson_id", "done"]], st: ["Points and streaks"], g: ["Progress tracking and rewards, like my Meowks Achieve project", "Roles for teachers and students"], q: "Who are the learners, and who manages the content?" },
-            { l: "a community app", re: /social|chat|communit|forum|messag|friends|follow|feed|group|network of people|club/, pg: ["Feed", "Profile", "Messages", "Notifications"], tb: [["posts", "body", "visibility"], ["messages", "to_user", "body"]], st: ["Realtime updates"], g: ["Accounts, posts and live messaging", "Basic moderation tools"], q: "Is it public or invite-only?" },
-            { l: "a dashboard", re: /dashboard|analytic|report|track|monitor|inventory|stats|kpi|metric|admin|spreadsheet|excel|sheet|record/, pg: ["Overview", "Records", "Charts", "Admin"], tb: [["records", "title", "category", "value"], ["metrics", "record_id", "period", "amount"]], st: ["Charts (Chart.js or D3)"], g: ["One place to see your numbers", "Import from your spreadsheets", "Roles for who sees what"], q: "Where does your data live today?" },
-            { l: "a relationship graph", re: /graph|network|relationship|connect|trace|spread|map of/, pg: ["Graph explorer", "Search", "Details"], tb: null, st: ["Neo4j and Cypher", "Vis.js"], g: ["Interactive map of connections, like my EpiGraph project"], q: "What are the things, and how are they connected?" },
-            { l: "an interactive 3D experience", re: /3d|three|game|virtual|tour|immersive|animation|interactive|fun|brand/, pg: ["3D scene", "Controls", "Info panels"], tb: null, st: ["Three.js", "GSAP"], g: ["Interactive 3D that runs in the browser", "A lighter fallback for slow devices"], q: "Who is it for, and on which devices?" },
-            { l: "an AI assistant", re: /\bai\b|chatbot|gpt|gemini|claude|assistant|recommend|match|automat/, pg: ["Assistant UI", "Admin prompts"], tb: [["conversations", "title"], ["messages", "role", "content"]], st: ["AI API (e.g. Gemini)", "Server-side API keys"], g: ["Assistant wired into your own content, like the AI matchmaking in my Baylo project", "Keys kept safely on the server"], q: "What should it know, and what must it never do?" },
-            { l: "a proper database", re: /database|data|sql|schema|migrat|normaliz|backup|erd/, pg: ["Import", "Browse and edit", "Export"], tb: [["entities", "name", "type"], ["relations", "from_id", "to_id"]], st: ["SQL migration scripts"], g: ["Clean, normalized schema with an ERD", "Migration from your current files", "A backup plan"], q: "What format is the data in now, and how big is it?" },
-            { l: "a security review", re: /secur|hack|vulnerab|audit|privacy|breach|leak|safe|protect|wireshark/, pg: ["Review", "Fix list", "Retest"], tb: null, st: ["Row level security", "Wireshark traffic checks"], g: ["Findings ranked by risk", "Fixes for logins and access control"], q: "Which parts handle logins or private data?" },
-            { l: "a mobile-friendly app", re: /mobile|phone|android|ios|pwa|install/, pg: ["Installable app", "Offline basics"], tb: null, st: ["PWA"], g: ["An installable web app for phones (native store apps are outside what I build today)"], q: "Which phones do your users have?" },
-            { l: "a fix and redesign", re: /slow|old|broken|bug|fix|redesign|outdated|ugly|improve|upgrade|revamp|refresh/, pg: ["Audit", "Fix list", "Retest"], tb: null, st: ["Performance profiling"], g: ["A clear list of what is slow or broken", "Fixes in priority order"], q: "What annoys you or your users the most?" },
-            { l: "a website", re: /website|web ?site|landing|portfolio|blog|brochure|page|online presence|business|company|personal/, pg: ["Home", "About", "Services or work", "Contact"], tb: null, st: ["HTML, CSS and JavaScript", "Tailwind", "Vercel or Netlify"], g: ["Fast, mobile-first site", "Contact form that reaches your inbox", "SEO basics and share previews"], q: "Do you already have a logo, colors or content?" }
+            {
+              l: "an online store",
+              re: /shop|store|sell|buy|order|cart|market|product|checkout|pay|bakery|menu|restaurant|retail/,
+              pg: [
+                "Catalog",
+                "Product page",
+                "Cart",
+                "Checkout",
+                "Order tracking",
+                "Admin orders",
+              ],
+              tb: [
+                ["products", "name", "price", "stock"],
+                ["orders", "status", "total"],
+                ["order_items", "qty"],
+              ],
+              st: ["Checkout and receipt flow"],
+              g: [
+                "Catalog, cart and order tracking",
+                "Admin view to manage orders",
+                "Payment flow that fits your market, like the GCash receipt checks in my Kusy project",
+              ],
+              q: "How do your customers pay and receive things today?",
+            },
+            {
+              l: "a booking system",
+              re: /book|appoint|schedul|reserv|calendar|slot|salon|clinic|rental/,
+              pg: ["Services", "Pick a slot", "Confirmation", "Admin calendar"],
+              tb: [
+                ["services", "name", "duration", "price"],
+                ["bookings", "service_id", "slot", "status"],
+              ],
+              st: ["Email or SMS reminders"],
+              g: [
+                "Online booking that blocks double-bookings",
+                "Calendar for you to manage everything",
+              ],
+              q: "How long is a typical appointment, and who handles them?",
+            },
+            {
+              l: "a learning platform",
+              re: /learn|school|student|class|course|quiz|lesson|teach|attendance|grade|exam|study|tutor|notes/,
+              pg: ["Courses", "Lesson", "Progress", "Leaderboard"],
+              tb: [
+                ["courses", "title", "level"],
+                ["lessons", "course_id", "content"],
+                ["progress", "lesson_id", "done"],
+              ],
+              st: ["Points and streaks"],
+              g: [
+                "Progress tracking and rewards, like my Meowks Achieve project",
+                "Roles for teachers and students",
+              ],
+              q: "Who are the learners, and who manages the content?",
+            },
+            {
+              l: "a community app",
+              re: /social|chat|communit|forum|messag|friends|follow|feed|group|network of people|club/,
+              pg: ["Feed", "Profile", "Messages", "Notifications"],
+              tb: [
+                ["posts", "body", "visibility"],
+                ["messages", "to_user", "body"],
+              ],
+              st: ["Realtime updates"],
+              g: [
+                "Accounts, posts and live messaging",
+                "Basic moderation tools",
+              ],
+              q: "Is it public or invite-only?",
+            },
+            {
+              l: "a dashboard",
+              re: /dashboard|analytic|report|track|monitor|inventory|stats|kpi|metric|admin|spreadsheet|excel|sheet|record/,
+              pg: ["Overview", "Records", "Charts", "Admin"],
+              tb: [
+                ["records", "title", "category", "value"],
+                ["metrics", "record_id", "period", "amount"],
+              ],
+              st: ["Charts (Chart.js or D3)"],
+              g: [
+                "One place to see your numbers",
+                "Import from your spreadsheets",
+                "Roles for who sees what",
+              ],
+              q: "Where does your data live today?",
+            },
+            {
+              l: "a relationship graph",
+              re: /graph|network|relationship|connect|trace|spread|map of/,
+              pg: ["Graph explorer", "Search", "Details"],
+              tb: null,
+              st: ["Neo4j and Cypher", "Vis.js"],
+              g: ["Interactive map of connections, like my EpiGraph project"],
+              q: "What are the things, and how are they connected?",
+            },
+            {
+              l: "an interactive 3D experience",
+              re: /3d|three|game|virtual|tour|immersive|animation|interactive|fun|brand/,
+              pg: ["3D scene", "Controls", "Info panels"],
+              tb: null,
+              st: ["Three.js", "GSAP"],
+              g: [
+                "Interactive 3D that runs in the browser",
+                "A lighter fallback for slow devices",
+              ],
+              q: "Who is it for, and on which devices?",
+            },
+            {
+              l: "an AI assistant",
+              re: /\bai\b|chatbot|gpt|gemini|claude|assistant|recommend|match|automat/,
+              pg: ["Assistant UI", "Admin prompts"],
+              tb: [
+                ["conversations", "title"],
+                ["messages", "role", "content"],
+              ],
+              st: ["AI API (e.g. Gemini)", "Server-side API keys"],
+              g: [
+                "Assistant wired into your own content, like the AI matchmaking in my Baylo project",
+                "Keys kept safely on the server",
+              ],
+              q: "What should it know, and what must it never do?",
+            },
+            {
+              l: "a proper database",
+              re: /database|data|sql|schema|migrat|normaliz|backup|erd/,
+              pg: ["Import", "Browse and edit", "Export"],
+              tb: [
+                ["entities", "name", "type"],
+                ["relations", "from_id", "to_id"],
+              ],
+              st: ["SQL migration scripts"],
+              g: [
+                "Clean, normalized schema with an ERD",
+                "Migration from your current files",
+                "A backup plan",
+              ],
+              q: "What format is the data in now, and how big is it?",
+            },
+            {
+              l: "a security review",
+              re: /secur|hack|vulnerab|audit|privacy|breach|leak|safe|protect|wireshark/,
+              pg: ["Review", "Fix list", "Retest"],
+              tb: null,
+              st: ["Row level security", "Wireshark traffic checks"],
+              g: [
+                "Findings ranked by risk",
+                "Fixes for logins and access control",
+              ],
+              q: "Which parts handle logins or private data?",
+            },
+            {
+              l: "a mobile-friendly app",
+              re: /mobile|phone|android|ios|pwa|install/,
+              pg: ["Installable app", "Offline basics"],
+              tb: null,
+              st: ["PWA"],
+              g: [
+                "An installable web app for phones (native store apps are outside what I build today)",
+              ],
+              q: "Which phones do your users have?",
+            },
+            {
+              l: "a fix and redesign",
+              re: /slow|old|broken|bug|fix|redesign|outdated|ugly|improve|upgrade|revamp|refresh/,
+              pg: ["Audit", "Fix list", "Retest"],
+              tb: null,
+              st: ["Performance profiling"],
+              g: [
+                "A clear list of what is slow or broken",
+                "Fixes in priority order",
+              ],
+              q: "What annoys you or your users the most?",
+            },
+            {
+              l: "a website",
+              re: /website|web ?site|landing|portfolio|blog|brochure|page|online presence|business|company|personal/,
+              pg: ["Home", "About", "Services or work", "Contact"],
+              tb: null,
+              st: ["HTML, CSS and JavaScript", "Tailwind", "Vercel or Netlify"],
+              g: [
+                "Fast, mobile-first site",
+                "Contact form that reaches your inbox",
+                "SEO basics and share previews",
+              ],
+              q: "Do you already have a logo, colors or content?",
+            },
           ];
-          function words(t) { return t.toLowerCase().split(/[^a-z0-9]+/).filter(function (w) { return w.length > 2 && STOP.indexOf(w) < 0; }); }
-          function sing(w) { return w.replace(/ies$/, "y").replace(/([^s])s$/, "$1"); }
-          function uniq(a, n) { var o = []; a.forEach(function (x) { if (o.indexOf(x) < 0) o.push(x); }); return o.slice(0, n); }
+          function words(t) {
+            return t
+              .toLowerCase()
+              .split(/[^a-z0-9]+/)
+              .filter(function (w) {
+                return w.length > 2 && STOP.indexOf(w) < 0;
+              });
+          }
+          function sing(w) {
+            return w.replace(/ies$/, "y").replace(/([^s])s$/, "$1");
+          }
+          function uniq(a, n) {
+            var o = [];
+            a.forEach(function (x) {
+              if (o.indexOf(x) < 0) o.push(x);
+            });
+            return o.slice(0, n);
+          }
           function scraps(ws) {
-            mz.className = ""; mz.innerHTML = "";
+            mz.className = "";
+            mz.innerHTML = "";
             ws.forEach(function (w, i) {
               var e = document.createElement("span");
-              e.className = "sp"; e.textContent = w;
-              e.style.left = rnd(3, 70) + "%"; e.style.top = rnd(4, 80) + "%"; e.style.background = C[i % 5];
+              e.className = "sp";
+              e.textContent = w;
+              e.style.left = rnd(3, 70) + "%";
+              e.style.top = rnd(4, 80) + "%";
+              e.style.background = C[i % 5];
               mz.appendChild(e);
               gsap.set(e, { rotation: rnd(-16, 16) });
               if (!reduce) {
                 gsap.from(e, { scale: 0, duration: 0.4, ease: "back.out(3)" });
-                gsap.to(e, { x: rnd(-16, 16), y: rnd(-16, 16), rotation: "+=" + rnd(-7, 7), duration: rnd(2, 4), repeat: -1, yoyo: true, ease: "sine.inOut" });
+                gsap.to(e, {
+                  x: rnd(-16, 16),
+                  y: rnd(-16, 16),
+                  rotation: "+=" + rnd(-7, 7),
+                  duration: rnd(2, 4),
+                  repeat: -1,
+                  yoyo: true,
+                  ease: "sine.inOut",
+                });
               }
             });
           }
-          function cur() { var w = words(mi.value).slice(0, 9); return w.length ? w : DEF; }
+          function cur() {
+            var w = words(mi.value).slice(0, 9);
+            return w.length ? w : DEF;
+          }
           scraps(DEF);
           var tm;
           mi.addEventListener("input", function () {
             clearTimeout(tm);
-            tm = setTimeout(function () { scraps(cur()); tone(500 + cur().length * 40, 0.08, "triangle", 0.02); }, 250);
+            tm = setTimeout(function () {
+              scraps(cur());
+              tone(500 + cur().length * 40, 0.08, "triangle", 0.02);
+            }, 250);
           });
           $$("#mq2 button").forEach(function (b) {
-            b.addEventListener("click", function () { mi.value = b.textContent; mi.dispatchEvent(new Event("input")); });
+            b.addEventListener("click", function () {
+              mi.value = b.textContent;
+              mi.dispatchEvent(new Event("input"));
+            });
           });
           function plan(txt) {
-            var t = txt.toLowerCase(), hit = K.filter(function (k) { return k.re.test(t); }), ws = words(txt);
-            var main = hit[0], tb = null, i;
+            var t = txt.toLowerCase(),
+              hit = K.filter(function (k) {
+                return k.re.test(t);
+              }),
+              ws = words(txt);
+            var main = hit[0],
+              tb = null,
+              i;
             for (i = 0; i < hit.length && !tb; i++) tb = hit[i].tb;
             if (!hit.length) {
-              var ent = uniq(ws.map(sing), 2); if (!ent.length) ent = ["project", "task"];
-              tb = ent.map(function (e) { return [e + "s", "name", "status"]; });
+              var ent = uniq(ws.map(sing), 2);
+              if (!ent.length) ent = ["project", "task"];
+              tb = ent.map(function (e) {
+                return [e + "s", "name", "status"];
+              });
             }
-            var all = function (key) { return [].concat.apply([], hit.map(function (k) { return k[key] || []; })); };
+            var all = function (key) {
+              return [].concat.apply(
+                [],
+                hit.map(function (k) {
+                  return k[key] || [];
+                }),
+              );
+            };
             return {
-              hit: hit, ws: ws, tb: tb,
-              heard: hit.length ? "It sounds like you need " + uniq(hit.map(function (k) { return k.l; }), 3).join(" plus ") + ", around " + (ws.slice(0, 4).join(", ") || "your idea") + "." : "I can't match this to one of my usual shapes yet, which is fine. Most real ideas start that way, so here is how I would turn it into a scoped first version.",
-              pg: hit.length ? uniq(all("pg"), 9) : ["Home", "Main feature", "Account", "Admin"],
-              st: uniq((tb || hit.some(function (k) { return k.tb; }) ? BASE : []).concat(all("st")).concat(hit.length && !tb ? [] : []), 8).concat(!hit.length || (!tb && !all("st").length) ? [] : []),
-              g: hit.length ? uniq(all("g"), 5) : ["A scoped, working first version of your idea", "A written plan for what comes next"],
-              q: ["Who will use it, and on what devices?"].concat(uniq(hit.map(function (k) { return k.q; }), 2), hit.length ? [] : ["What would make this a success for you?"]),
-              steps: ["Listen and scope", tb ? "Model the data" : "Sketch pages and content", "Build in small slices you can see", "Secure, test and launch"]
+              hit: hit,
+              ws: ws,
+              tb: tb,
+              heard: hit.length
+                ? "It sounds like you need " +
+                  uniq(
+                    hit.map(function (k) {
+                      return k.l;
+                    }),
+                    3,
+                  ).join(" plus ") +
+                  ", around " +
+                  (ws.slice(0, 4).join(", ") || "your idea") +
+                  "."
+                : "I can't match this to one of my usual shapes yet, which is fine. Most real ideas start that way, so here is how I would turn it into a scoped first version.",
+              pg: hit.length
+                ? uniq(all("pg"), 9)
+                : ["Home", "Main feature", "Account", "Admin"],
+              st: uniq(
+                (tb ||
+                hit.some(function (k) {
+                  return k.tb;
+                })
+                  ? BASE
+                  : []
+                )
+                  .concat(all("st"))
+                  .concat(hit.length && !tb ? [] : []),
+                8,
+              ).concat(!hit.length || (!tb && !all("st").length) ? [] : []),
+              g: hit.length
+                ? uniq(all("g"), 5)
+                : [
+                    "A scoped, working first version of your idea",
+                    "A written plan for what comes next",
+                  ],
+              q: ["Who will use it, and on what devices?"].concat(
+                uniq(
+                  hit.map(function (k) {
+                    return k.q;
+                  }),
+                  2,
+                ),
+                hit.length ? [] : ["What would make this a success for you?"],
+              ),
+              steps: [
+                "Listen and scope",
+                tb ? "Model the data" : "Sketch pages and content",
+                "Build in small slices you can see",
+                "Secure, test and launch",
+              ],
             };
           }
           function tbl(n, cols, cls) {
-            return '<div class="tb ' + cls + '"><b>' + n + "</b>" + cols.slice(0, 5).map(function (c) { return "<i>" + c + "</i>"; }).join("") + "</div>";
+            return (
+              '<div class="tb ' +
+              cls +
+              '"><b>' +
+              n +
+              "</b>" +
+              cols
+                .slice(0, 5)
+                .map(function (c) {
+                  return "<i>" + c + "</i>";
+                })
+                .join("") +
+              "</div>"
+            );
           }
-          function chips(a, cl) { return '<div class="bpr">' + a.map(function (x) { return "<span>" + x + "</span>"; }).join("") + (cl || "") + "</div>"; }
+          function chips(a, cl) {
+            return (
+              '<div class="bpr">' +
+              a
+                .map(function (x) {
+                  return "<span>" + x + "</span>";
+                })
+                .join("") +
+              (cl || "") +
+              "</div>"
+            );
+          }
           function go() {
-            if (busy) return; busy = true;
-            var txt = mi.value.trim() || "a messy idea about a project and tasks", r = plan(txt);
+            if (busy) return;
+            busy = true;
+            var txt =
+                mi.value.trim() || "a messy idea about a project and tasks",
+              r = plan(txt);
             tone(330, 0.3, "sine", 0.05, 760);
-            gsap.to(mz.querySelectorAll(".sp"), { left: "50%", top: "50%", x: 0, y: 0, scale: 0, opacity: 0, rotation: "+=300", duration: reduce ? 0.01 : 0.7, stagger: reduce ? 0 : 0.04, ease: "power3.in", overwrite: true, onComplete: draw });
-            function draw() {
-              var hasTb = !!r.tb, h = '<p class="bph">' + r.heard + '</p><p class="bpt">How I would deliver it</p><p class="bpo">' + r.steps.map(function (x, i) { return "<b>" + (i + 1) + " " + x + "</b>"; }).join("then") + '</p><p class="bpt">Pages and screens</p>' + chips(r.pg);
-              if (hasTb) {
-                h += '<p class="bpt">Data, with row level security on each table</p><div class="erd"><div class="col" style="flex:none;width:40%;justify-content:center">' + tbl("users", ["id", "email", "role"], "u") + '</div><div class="col">' +
-                  r.tb.slice(0, 4).map(function (t) { return tbl(t[0], ["id", "user_id → users"].concat(t.slice(1), ["created_at"]), "f"); }).join("") + '</div><svg class="erl" aria-hidden="true"></svg></div>';
+            gsap.to(mz.querySelectorAll(".sp"), {
+              left: "50%",
+              top: "50%",
+              x: 0,
+              y: 0,
+              scale: 0,
+              opacity: 0,
+              rotation: "+=300",
+              duration: reduce ? 0.01 : 0.7,
+              stagger: reduce ? 0 : 0.04,
+              ease: "power3.in",
+              overwrite: true,
+              onComplete: draw,
+            });
+            var salt = 0;
+            function sr(a) {
+              return function () {
+                a |= 0;
+                a = (a + 0x6d2b79f5) | 0;
+                var t = Math.imul(a ^ (a >>> 15), 1 | a);
+                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+              };
+            }
+            function hsh(t) {
+              var h = 2166136261;
+              for (var i = 0; i < t.length; i++) {
+                h ^= t.charCodeAt(i);
+                h = Math.imul(h, 16777619);
               }
-              h += '<p class="bpt">Stack and security</p>' + chips(r.st.length ? r.st : ["HTML, CSS and JavaScript"], hasTb ? '<span class="s">Auth + RLS</span>' : "") +
-                '<p class="bpt">What you would get</p><ul class="bpl">' + r.g.map(function (x) { return "<li>" + x + "</li>"; }).join("") + '</ul><p class="bpt">What I would ask you first</p><ul class="bpl">' + r.q.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>" +
-                '<div class="acts"><a class="btn pri" id="msend" href="#">Send this brief</a><button class="btn" id="mcp">Copy brief</button><button class="btn" id="mrs">Start over</button></div>';
-              mz.className = "on"; mz.innerHTML = h;
-              var brief = "Hi Michael, here is my messy idea:\n" + txt + "\n\nHow you could help: " + r.heard + "\nScreens: " + r.pg.join(", ") + "\nStack: " + r.st.join(", ") + "\nDeliverables: " + r.g.join("; ") + "\n\nCan we talk?";
-              $("#msend").href = "mailto:michaelangeloucquinit@gmail.com?subject=" + encodeURIComponent("Project idea: " + (r.hit[0] ? r.hit[0].l : "something custom")) + "&body=" + encodeURIComponent(brief);
-              $("#mcp").addEventListener("click", function () { try { navigator.clipboard.writeText(brief); } catch (e) {} this.textContent = "Copied"; });
-              $("#mrs").addEventListener("click", function () { busy = false; scraps(cur()); });
+              return h >>> 0;
+            }
+            function wf(name, sl, col) {
+              var R = sr(hsh(name) + sl * 977),
+                v = Math.floor(R() * 4),
+                o = "";
+              function j(a, b) {
+                return Math.round((a + R() * (b - a)) * 10) / 10;
+              }
+              function bx(x, y, w, h, f) {
+                o +=
+                  '<rect x="' +
+                  x +
+                  '" y="' +
+                  y +
+                  '" width="' +
+                  w +
+                  '" height="' +
+                  h +
+                  '" rx="1.5" ' +
+                  (f
+                    ? 'fill="' + col + '" opacity=".9"'
+                    : 'fill="currentColor" opacity=".2"') +
+                  "/>";
+              }
+              function ln(x, y, w) {
+                bx(x, y, w, 2.4, 0);
+              }
+              o +=
+                '<rect x="1" y="1" width="98" height="62" rx="4" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6"/><path d="M1 10H99" stroke="currentColor" stroke-width="1" opacity=".6"/><circle cx="6" cy="5.5" r="1.5" fill="' +
+                col +
+                '"/><circle cx="11" cy="5.5" r="1.5" fill="currentColor" opacity=".35"/><circle cx="16" cy="5.5" r="1.5" fill="currentColor" opacity=".35"/>';
+              if (v === 0) {
+                bx(6, 15, 88, j(14, 24), 1);
+                ln(6, 44, j(40, 70));
+                ln(6, 49, j(24, 46));
+                bx(6, 54, 26, 5, 0);
+                bx(37, 54, 26, 5, 0);
+                bx(68, 54, 26, 5, 0);
+              } else if (v === 1) {
+                bx(6, 15, 22, 43, 0);
+                bx(33, 15, j(30, 58), 10, 1);
+                for (var k = 0; k < 4; k++) ln(33, 31 + k * 7, j(34, 60));
+              } else if (v === 2) {
+                var f = Math.floor(R() * 4);
+                for (var q = 0; q < 4; q++)
+                  bx(
+                    6 + (q % 2) * 45,
+                    15 + Math.floor(q / 2) * 25,
+                    43,
+                    22,
+                    q === f,
+                  );
+              } else {
+                ln(6, 16, j(26, 48));
+                bx(6, 23, 88, 8, 0);
+                bx(6, 34, 88, 8, 0);
+                bx(6, 45, 88, 8, 0);
+                bx(6, 56 - 0.01, j(22, 40), 4.5, 1);
+              }
+              return o;
+            }
+            function draw() {
+              var hasTb = !!r.tb,
+                ZC = ["#f2d14b", "#5dd68a", "#4fd4ff", "#ff5a2c", "#8f84ff"];
+              function mk(t, i) {
+                return (
+                  '<mark style="background:' + ZC[i % 5] + '">' + t + "</mark>"
+                );
+              }
+              var head = r.hit.length
+                ? "It sounds like you need " +
+                  uniq(
+                    r.hit.map(function (k) {
+                      return k.l;
+                    }),
+                    3,
+                  )
+                    .map(mk)
+                    .join(" plus ") +
+                  (r.ws.length
+                    ? ", around " +
+                      r.ws
+                        .slice(0, 3)
+                        .map(function (w, i) {
+                          return mk(w, i + 2);
+                        })
+                        .join(" ") +
+                      "."
+                    : ".")
+                : r.heard;
+              var subs = [
+                "Tell me everything. Messy is fine.",
+                hasTb
+                  ? "Design the tables before any code."
+                  : "Draw the screens before any code.",
+                "You see real progress, not a big reveal.",
+                "Lock it down, test it, go live.",
+              ];
+              var h =
+                '<div class="board"><p class="bh">' +
+                head +
+                "</p>" +
+                '<div class="bsec"><h4>The route</h4><div class="road"><svg aria-hidden="true"><path/></svg>' +
+                r.steps
+                  .map(function (x, i) {
+                    return (
+                      '<div class="rn"><i style="background:' +
+                      ZC[i % 5] +
+                      '">' +
+                      (i + 1) +
+                      "</i><b>" +
+                      x +
+                      "</b><span>" +
+                      subs[i] +
+                      "</span></div>"
+                    );
+                  })
+                  .join("") +
+                "</div></div>" +
+                '<div class="bsec"><h4>Screens, sketched</h4><div class="scr">' +
+                r.pg
+                  .map(function (n, i) {
+                    return (
+                      '<figure class="pgc"><svg viewBox="0 0 100 64" aria-hidden="true">' +
+                      wf(n, 0, ZC[i % 5]) +
+                      "</svg><figcaption>" +
+                      n +
+                      "</figcaption></figure>"
+                    );
+                  })
+                  .join("") +
+                "</div></div>";
+              if (hasTb) {
+                h +=
+                  '<div class="bsec"><h4>Data, row level security on every table</h4><div class="erd"><div class="col" style="flex:none;width:40%;justify-content:center">' +
+                  tbl("users", ["id", "email", "role"], "u") +
+                  '</div><div class="col">' +
+                  r.tb
+                    .slice(0, 4)
+                    .map(function (t) {
+                      return tbl(
+                        t[0],
+                        ["id", "user_id → users"].concat(t.slice(1), [
+                          "created_at",
+                        ]),
+                        "f",
+                      );
+                    })
+                    .join("") +
+                  '</div><svg class="erl" aria-hidden="true"></svg></div></div>';
+              }
+              var stk = (
+                r.st.length ? r.st : ["HTML, CSS and JavaScript"]
+              ).concat(hasTb ? ["Auth + RLS"] : []);
+              h +=
+                '<div class="bsec"><h4>Stack and security</h4><div class="stks">' +
+                stk
+                  .map(function (x, i) {
+                    return (
+                      '<span style="background:' +
+                      ZC[(i + 1) % 5] +
+                      '">' +
+                      x +
+                      "</span>"
+                    );
+                  })
+                  .join("") +
+                "</div></div>" +
+                '<div class="bsec"><h4>What you get</h4><ul class="chk">' +
+                r.g
+                  .map(function (x) {
+                    return (
+                      '<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 11 L8 16 L17 4"/></svg><span>' +
+                      x +
+                      "</span></li>"
+                    );
+                  })
+                  .join("") +
+                "</ul></div>" +
+                '<div class="bsec"><h4>First, I would ask</h4><div class="notes">' +
+                r.q
+                  .map(function (x) {
+                    return '<div class="note">' + x + "</div>";
+                  })
+                  .join("") +
+                "</div></div>" +
+                '<div class="acts"><a class="btn pri" id="msend" href="#">Send this brief</a><button class="btn" id="mcp">Copy brief</button><button class="btn" id="mshk">Shake it</button><button class="btn" id="mrs">Start over</button></div></div>';
+              mz.className = "on";
+              mz.innerHTML = h;
+              var brief =
+                "Hi Michael, here is my messy idea:\n" +
+                txt +
+                "\n\nHow you could help: " +
+                r.heard +
+                "\nScreens: " +
+                r.pg.join(", ") +
+                "\nStack: " +
+                r.st.join(", ") +
+                "\nDeliverables: " +
+                r.g.join("; ") +
+                "\n\nCan we talk?";
+              $("#msend").href =
+                "mailto:michaelangeloucquinit@gmail.com?subject=" +
+                encodeURIComponent(
+                  "Project idea: " +
+                    (r.hit[0] ? r.hit[0].l : "something custom"),
+                ) +
+                "&body=" +
+                encodeURIComponent(brief);
+              $("#mcp").addEventListener("click", function () {
+                try {
+                  navigator.clipboard.writeText(brief);
+                } catch (e) {}
+                this.textContent = "Copied";
+              });
+              $("#mrs").addEventListener("click", function () {
+                busy = false;
+                salt = 0;
+                scraps(cur());
+              });
+              /* wavy dotted route that connects the steps */
+              function route() {
+                var road = mz.querySelector(".road"),
+                  sv = road.querySelector("svg"),
+                  pa = sv.querySelector("path"),
+                  rn = road.querySelectorAll(".rn");
+                var H = road.offsetHeight;
+                sv.style.height = H + "px";
+                sv.setAttribute("viewBox", "0 0 24 " + H);
+                var d = "M12 " + (rn[0].offsetTop + 12),
+                  py = rn[0].offsetTop + 12;
+                for (var i = 1; i < rn.length; i++) {
+                  var y = rn[i].offsetTop + 12,
+                    dir = i % 2 ? 1 : -1;
+                  d +=
+                    " C" +
+                    (12 + dir * 16) +
+                    " " +
+                    (py + (y - py) * 0.3) +
+                    "," +
+                    (12 - dir * 16) +
+                    " " +
+                    (py + (y - py) * 0.7) +
+                    ",12 " +
+                    y;
+                  py = y;
+                }
+                pa.setAttribute("d", d);
+                if (!reduce) {
+                  var L = pa.getTotalLength();
+                  gsap.from(pa, { opacity: 0, duration: 0.6, delay: 0.3 });
+                }
+              }
+              route();
+              /* tilt everything a little so it feels hand-placed */
+              mz.querySelectorAll(".pgc").forEach(function (c) {
+                gsap.set(c, { rotation: rnd(-3, 3) });
+              });
+              mz.querySelectorAll(".stks span").forEach(function (c) {
+                gsap.set(c, { rotation: rnd(-5, 5) });
+              });
+              mz.querySelectorAll(".note").forEach(function (c) {
+                gsap.set(c, { rotation: rnd(-3.5, 3.5) });
+              });
+              $("#mshk").addEventListener("click", function () {
+                salt++;
+                mz.querySelectorAll(".pgc").forEach(function (c, i) {
+                  c.querySelector("svg").innerHTML = wf(
+                    r.pg[i],
+                    salt,
+                    ZC[i % 5],
+                  );
+                  gsap.fromTo(
+                    c,
+                    {
+                      x: rnd(-40, 40),
+                      y: rnd(-30, 30),
+                      rotation: rnd(-25, 25),
+                      scale: 0.7,
+                    },
+                    {
+                      x: 0,
+                      y: 0,
+                      rotation: rnd(-3, 3),
+                      scale: 1,
+                      duration: reduce ? 0.01 : 0.9,
+                      ease: "elastic.out(1,.5)",
+                    },
+                  );
+                });
+                gsap.to(mz.querySelectorAll(".stks span,.note"), {
+                  rotation: function () {
+                    return rnd(-6, 6);
+                  },
+                  duration: reduce ? 0.01 : 0.6,
+                  ease: "back.out(2)",
+                });
+                tone(440 + salt * 30, 0.12, "triangle", 0.03);
+              });
               var erd = mz.querySelector(".erd");
               if (erd) {
-                var sv = erd.querySelector(".erl"), u = erd.querySelector(".tb.u");
+                var sv2 = erd.querySelector(".erl"),
+                  u = erd.querySelector(".tb.u");
                 erd.querySelectorAll(".tb.f").forEach(function (t, i) {
-                  var x1 = u.offsetLeft + u.offsetWidth, y1 = u.offsetTop + u.offsetHeight / 2, x2 = t.offsetLeft, y2 = t.offsetTop + t.offsetHeight / 2;
-                  var pa = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                  pa.setAttribute("d", "M" + x1 + " " + y1 + " C" + (x1 + 30) + " " + y1 + "," + (x2 - 30) + " " + y2 + "," + x2 + " " + y2);
-                  sv.appendChild(pa);
-                  if (!reduce) gsap.from(pa, { opacity: 0, duration: 0.5, delay: 0.5 + i * 0.15 });
+                  var x1 = u.offsetLeft + u.offsetWidth,
+                    y1 = u.offsetTop + u.offsetHeight / 2,
+                    x2 = t.offsetLeft,
+                    y2 = t.offsetTop + t.offsetHeight / 2;
+                  var pa = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "path",
+                  );
+                  pa.setAttribute(
+                    "d",
+                    "M" +
+                      x1 +
+                      " " +
+                      y1 +
+                      " C" +
+                      (x1 + 30) +
+                      " " +
+                      y1 +
+                      "," +
+                      (x2 - 30) +
+                      " " +
+                      y2 +
+                      "," +
+                      x2 +
+                      " " +
+                      y2,
+                  );
+                  sv2.appendChild(pa);
+                  if (!reduce)
+                    gsap.from(pa, {
+                      opacity: 0,
+                      duration: 0.5,
+                      delay: 0.5 + i * 0.15,
+                    });
                 });
               }
               if (!reduce) {
-                gsap.from(mz.querySelectorAll(".tb"), { scale: 0.4, rotation: function () { return rnd(-14, 14); }, opacity: 0, stagger: 0.12, duration: 0.8, ease: "elastic.out(1,.55)" });
-                gsap.from(mz.querySelectorAll(".bpr span,.bpo b,.bpl li,.bph"), { y: 20, opacity: 0, rotation: function () { return rnd(-6, 6); }, stagger: 0.025, duration: 0.5, delay: 0.3, ease: "back.out(2)" });
+                var tl = gsap.timeline();
+                tl.from(".board .bh", {
+                  y: 20,
+                  opacity: 0,
+                  duration: 0.5,
+                  ease: "power3.out",
+                })
+                  .from(
+                    ".board .bh mark",
+                    {
+                      scaleX: 0,
+                      transformOrigin: "0 50%",
+                      stagger: 0.1,
+                      duration: 0.4,
+                      ease: "power2.out",
+                    },
+                    "<0.2",
+                  )
+                  .from(
+                    ".board .rn",
+                    {
+                      x: -24,
+                      opacity: 0,
+                      stagger: 0.12,
+                      duration: 0.5,
+                      ease: "back.out(2)",
+                    },
+                    "<0.1",
+                  )
+                  .from(
+                    ".board .rn i",
+                    {
+                      scale: 0,
+                      rotation: -180,
+                      stagger: 0.12,
+                      duration: 0.6,
+                      ease: "back.out(3)",
+                    },
+                    "<",
+                  )
+                  .from(
+                    ".board .pgc",
+                    {
+                      x: function () {
+                        return rnd(-60, 60);
+                      },
+                      y: function () {
+                        return rnd(-50, 50);
+                      },
+                      rotation: function () {
+                        return rnd(-30, 30);
+                      },
+                      scale: 0.4,
+                      opacity: 0,
+                      stagger: 0.07,
+                      duration: 0.9,
+                      ease: "elastic.out(1,.55)",
+                    },
+                    "<0.2",
+                  )
+                  .from(
+                    ".board .tb",
+                    {
+                      scale: 0.5,
+                      opacity: 0,
+                      stagger: 0.1,
+                      duration: 0.7,
+                      ease: "elastic.out(1,.6)",
+                    },
+                    "<0.3",
+                  )
+                  .from(
+                    ".board .stks span",
+                    {
+                      y: -40,
+                      opacity: 0,
+                      rotation: function () {
+                        return rnd(-40, 40);
+                      },
+                      stagger: 0.06,
+                      duration: 0.7,
+                      ease: "bounce.out",
+                    },
+                    "<0.2",
+                  )
+                  .from(
+                    ".board .chk li",
+                    { x: 20, opacity: 0, stagger: 0.1, duration: 0.4 },
+                    "<0.2",
+                  )
+                  .from(
+                    ".board .chk path",
+                    {
+                      strokeDasharray: 30,
+                      strokeDashoffset: 30,
+                      stagger: 0.1,
+                      duration: 0.4,
+                      ease: "power2.out",
+                    },
+                    "<",
+                  )
+                  .from(
+                    ".board .note",
+                    {
+                      y: 30,
+                      opacity: 0,
+                      scale: 0.8,
+                      stagger: 0.1,
+                      duration: 0.6,
+                      ease: "back.out(2)",
+                    },
+                    "<0.1",
+                  )
+                  .from(
+                    ".board .acts .btn",
+                    { y: 14, opacity: 0, stagger: 0.07, duration: 0.4 },
+                    "<0.2",
+                  );
               }
             }
           }
           $("#mgo").addEventListener("click", go);
-          if (!reduce) gsap.fromTo(ms, { rotation: -4, y: 80, opacity: 0.2 }, { rotation: 0, y: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: ms, start: "top 98%", end: "top 55%", scrub: 0.7 } });
+          if (!reduce)
+            gsap.fromTo(
+              ms,
+              { rotation: -4, y: 80, opacity: 0.2 },
+              {
+                rotation: 0,
+                y: 0,
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: ms,
+                  start: "top 98%",
+                  end: "top 55%",
+                  scrub: 0.7,
+                },
+              },
+            );
         })();
 
         (function () {
           var h = $("#mh");
           if (!h) return;
-          var rnd = gsap.utils.random, C = ["#ff5a2c", "#8f84ff", "#5dd68a", "#f2d14b", "#4fd4ff"], L = [];
+          var rnd = gsap.utils.random,
+            C = ["#ff5a2c", "#8f84ff", "#5dd68a", "#f2d14b", "#4fd4ff"],
+            L = [];
           function mk(t, c) {
-            return t.split(" ").map(function (w) {
-              return '<span class="w">' + w.split("").map(function (ch) { return '<span class="' + c + '">' + ch + "</span>"; }).join("") + "</span>";
-            }).join(" ");
+            return t
+              .split(" ")
+              .map(function (w) {
+                return (
+                  '<span class="w">' +
+                  w
+                    .split("")
+                    .map(function (ch) {
+                      return '<span class="' + c + '">' + ch + "</span>";
+                    })
+                    .join("") +
+                  "</span>"
+                );
+              })
+              .join(" ");
           }
           h.setAttribute("aria-label", "Got a messy idea? Let's structure it.");
-          h.innerHTML = '<span class="ml" aria-hidden="true">' + mk("Got a messy idea?", "mc") + '</span><span class="tl" aria-hidden="true">' + mk("Let's structure it.", "tc") + '<i class="ul"></i></span>';
+          h.innerHTML =
+            '<span class="ml" aria-hidden="true">' +
+            mk("Got a messy idea?", "mc") +
+            '</span><span class="tl" aria-hidden="true">' +
+            mk("Let's structure it.", "tc") +
+            '<i class="ul"></i></span>';
           if (reduce) return;
           function look(o, anim) {
-            o.bx = rnd(-4, 4); o.by = rnd(-14, 14); o.r = rnd(-14, 14);
-            var st = Math.random(), e = o.el;
-            e.style.fontVariationSettings = "'wght' " + Math.round(rnd(280, 800)) + ",'wdth' " + Math.round(rnd(75, 100));
+            o.bx = rnd(-4, 4);
+            o.by = rnd(-14, 14);
+            o.r = rnd(-14, 14);
+            var st = Math.random(),
+              e = o.el;
+            e.style.fontVariationSettings =
+              "'wght' " +
+              Math.round(rnd(280, 800)) +
+              ",'wdth' " +
+              Math.round(rnd(75, 100));
             e.style.color = st < 0.2 ? C[Math.floor(rnd(0, 5))] : "";
             e.style.webkitTextStroke = st > 0.9 ? "2px currentColor" : "";
             if (st > 0.9) e.style.color = "transparent";
-            gsap.to(e, { x: o.bx, y: o.by, rotation: o.r, duration: anim ? 0.9 : 0, ease: "elastic.out(1,.45)", overwrite: "auto" });
+            gsap.to(e, {
+              x: o.bx,
+              y: o.by,
+              rotation: o.r,
+              duration: anim ? 0.9 : 0,
+              ease: "elastic.out(1,.45)",
+              overwrite: "auto",
+            });
           }
-          $$("#mh .mc").forEach(function (el) { var o = { el: el }; L.push(o); look(o, false); });
+          $$("#mh .mc").forEach(function (el) {
+            var o = { el: el };
+            L.push(o);
+            look(o, false);
+          });
           /* the neat line starts as chaos and sorts itself out as you scroll */
-          gsap.fromTo("#mh .tc", { x: function () { return rnd(-160, 160); }, y: function () { return rnd(-90, 90); }, rotation: function () { return rnd(-70, 70); }, opacity: 0 }, { x: 0, y: 0, rotation: 0, opacity: 1, stagger: 0.025, ease: "none", scrollTrigger: { trigger: h, start: "top 92%", end: "top 38%", scrub: 0.7 } });
-          gsap.fromTo("#mh .ul", { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: h, start: "top 60%", end: "top 30%", scrub: 0.7 } });
+          gsap.fromTo(
+            "#mh .tc",
+            {
+              x: function () {
+                return rnd(-160, 160);
+              },
+              y: function () {
+                return rnd(-90, 90);
+              },
+              rotation: function () {
+                return rnd(-70, 70);
+              },
+              opacity: 0,
+            },
+            {
+              x: 0,
+              y: 0,
+              rotation: 0,
+              opacity: 1,
+              stagger: 0.025,
+              ease: "none",
+              scrollTrigger: {
+                trigger: h,
+                start: "top 92%",
+                end: "top 38%",
+                scrub: 0.7,
+              },
+            },
+          );
+          gsap.fromTo(
+            "#mh .ul",
+            { scaleX: 0 },
+            {
+              scaleX: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: h,
+                start: "top 60%",
+                end: "top 30%",
+                scrub: 0.7,
+              },
+            },
+          );
           /* generative drift: a few letters re-roll every moment */
           setInterval(function () {
             if (document.hidden) return;
-            for (var i = 0; i < 3; i++) look(L[Math.floor(rnd(0, L.length))], true);
+            for (var i = 0; i < 3; i++)
+              look(L[Math.floor(rnd(0, L.length))], true);
           }, 1600);
           /* letters shy away from the cursor, click re-rolls everything */
           h.addEventListener("pointermove", function (e) {
             if (e.pointerType === "touch") return;
             L.forEach(function (o) {
-              var r = o.el.getBoundingClientRect(), dx = r.left + r.width / 2 - e.clientX, dy = r.top + r.height / 2 - e.clientY, d = Math.sqrt(dx * dx + dy * dy);
-              if (d < 130) gsap.to(o.el, { x: o.bx + (dx / d) * (130 - d) * 0.6, y: o.by + (dy / d) * (130 - d) * 0.6, rotation: o.r + dx * 0.15, duration: 0.35, overwrite: "auto" });
-              else gsap.to(o.el, { x: o.bx, y: o.by, rotation: o.r, duration: 0.6, overwrite: "auto" });
+              var r = o.el.getBoundingClientRect(),
+                dx = r.left + r.width / 2 - e.clientX,
+                dy = r.top + r.height / 2 - e.clientY,
+                d = Math.sqrt(dx * dx + dy * dy);
+              if (d < 130)
+                gsap.to(o.el, {
+                  x: o.bx + (dx / d) * (130 - d) * 0.6,
+                  y: o.by + (dy / d) * (130 - d) * 0.6,
+                  rotation: o.r + dx * 0.15,
+                  duration: 0.35,
+                  overwrite: "auto",
+                });
+              else
+                gsap.to(o.el, {
+                  x: o.bx,
+                  y: o.by,
+                  rotation: o.r,
+                  duration: 0.6,
+                  overwrite: "auto",
+                });
             });
           });
-          h.addEventListener("pointerleave", function () { L.forEach(function (o) { gsap.to(o.el, { x: o.bx, y: o.by, rotation: o.r, duration: 0.6, overwrite: "auto" }); }); });
-          h.addEventListener("click", function () { L.forEach(function (o) { look(o, true); }); tone(440, 0.25, "sine", 0.04, 880); });
+          h.addEventListener("pointerleave", function () {
+            L.forEach(function (o) {
+              gsap.to(o.el, {
+                x: o.bx,
+                y: o.by,
+                rotation: o.r,
+                duration: 0.6,
+                overwrite: "auto",
+              });
+            });
+          });
+          h.addEventListener("click", function () {
+            L.forEach(function (o) {
+              look(o, true);
+            });
+            tone(440, 0.25, "sine", 0.04, 880);
+          });
         })();
 
         addEventListener("load", function () {
