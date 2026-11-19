@@ -1238,10 +1238,14 @@
       .pfg>*{all:unset;box-sizing:border-box;display:block;padding:16px 18px;border:1px solid var(--line);border-radius:16px;background:radial-gradient(180px circle at var(--mx,50%) var(--my,0%),rgba(143,132,255,.2),transparent 70%),rgba(var(--pr),.85);transition:border-color .3s}
       .pfg>*:hover{border-color:var(--a)}
       .pfg button{cursor:pointer}
-      .pfg #pfm{grid-column:1 / -1}
+      @media(min-width:641px){
+        .pfg>div:nth-child(4){grid-column:1;grid-row:3}
+        .pfg #pfm{grid-column:2;grid-row:3}
+      }
       .pfg button:focus-visible{outline:2px solid var(--b);outline-offset:3px}
       .pfg dt,.pfg .k{display:block;color:var(--dim);font-size:13px;margin-bottom:4px}
       .pfg dd,.pfg .v{display:block;margin:0;font:600 17px/1.25 var(--disp);overflow-wrap:anywhere}
+      .pfg #pfm .v{font-size:clamp(12px,1.7vw,16px);letter-spacing:-.02em}
       .pfg .v small{display:block;font:400 13px var(--body);color:var(--soft);margin-top:3px}
       .pfb .tg{margin-bottom:6px}.pfb .edu{padding:24px;margin-bottom:22px}.pfb .edu h3{font-size:clamp(22px,2.6vw,34px)}.pfb .edu .tg{margin:0}
       @media(max-width:640px){.stk{font-size:12px}}
@@ -1255,6 +1259,46 @@
       .stk:active{cursor:grabbing}
       .ink{position:absolute;border-radius:50%;pointer-events:none;z-index:2;margin:-6px 0 0 -6px;mix-blend-mode:screen}
       :root[data-theme="light"] .ink{mix-blend-mode:multiply}
+      /* ---- messy idea lab (added) ---- */
+      .mess{position:relative;border:1px solid var(--line);border-radius:22px;padding:20px;background:rgba(var(--pr),.85);backdrop-filter:blur(8px)}
+      .mess .mh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;font:700 15px var(--disp)}
+      .mess .mh span{color:var(--dim);font:400 13px var(--body)}
+      #mi{all:unset;box-sizing:border-box;display:block;width:100%;min-height:74px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;font:400 16px/1.4 var(--body);color:var(--ink);background:rgba(var(--pr),.6)}
+      #mi:focus-visible{outline:2px solid var(--b);outline-offset:2px}
+      .mq2{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+      .mq2 button{all:unset;cursor:pointer;border:1px solid var(--line);border-radius:99px;padding:3px 12px;font-size:13px}
+      .mq2 button:hover{border-color:var(--a)}
+      .mq2 button:focus-visible{outline:2px solid var(--b)}
+      #mz{position:relative;min-height:230px;margin-top:16px;border:1px dashed var(--line);border-radius:16px;overflow:hidden}
+      #mz.on{border-style:solid;overflow:visible;padding:14px}
+      .sp{position:absolute;padding:5px 11px;border-radius:4px;font:700 13px var(--disp);color:#12121a;box-shadow:2px 4px 0 rgba(0,0,0,.35);white-space:nowrap}
+      .bpt{margin:0 0 8px;color:var(--dim);font-size:13px}
+      .erd{position:relative;display:flex;justify-content:space-between;gap:34px;margin-bottom:16px}
+      .erd .col{display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
+      .tb{border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;font-size:12px;background:rgba(var(--pr),.9)}
+      .tb.u{flex:1;align-self:center;max-width:42%}
+      .tb b{display:block;padding:4px 10px;background:var(--a);color:#12121a;font:700 13px var(--disp)}
+      .tb.f b{background:var(--b)}
+      .tb i{display:block;padding:1px 10px;font-style:normal;color:var(--soft)}
+      .erl{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+      .erl path{fill:none;stroke:var(--c);stroke-width:2;stroke-linecap:round;stroke-dasharray:5 5}
+      .bpr{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+      .bpr span{border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:13px}
+      .bpr span.s{border-color:var(--c)}
+      .bpo{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px;font-size:13px;color:var(--soft)}
+      .bpo b{font:700 13px var(--disp);color:var(--ink);border-radius:99px;padding:2px 10px;background:var(--line)}
+      .mess .acts{margin-top:4px;gap:10px}
+      .mess .btn{padding:10px 20px;font-size:15px}
+      .bph{margin:0 0 14px;font:600 17px/1.3 var(--disp)}
+      .bpl{margin:0 0 14px;padding-left:18px;font-size:14px;color:var(--soft)}
+      .bpl li{margin-bottom:3px}
+      /* ---- messy heading (added) ---- */
+      #mh .ml,#mh .tl{display:block}
+      #mh .w{display:inline-block;white-space:nowrap}
+      #mh .mc,#mh .tc{display:inline-block;will-change:transform}
+      #mh .mc{cursor:crosshair}
+      #mh .tl{position:relative;padding-bottom:.12em}
+      #mh .ul{display:block;height:.07em;min-height:4px;width:100%;margin-top:.04em;background:linear-gradient(90deg,var(--a),var(--b),var(--c));transform-origin:0 50%}
     </style>
   </head>
   <body>
@@ -1272,13 +1316,11 @@
     </div>
     <nav>
       <a href="#top">Michael Angelou C. Quinit</a>
-      <a href="#profile">Profile</a>
-      <span class="visitor-count" id="visitor-count" aria-live="polite"
-        >Views: …</span
+      <span class="visitor-count" id="visitor-count" aria-live="polite"> Portfolio Views Counter: …</span
       >
     </nav>
     <div class="ctl">
-      <button id="bs" aria-pressed="false">Sound: off</button
+      <button id="bm" aria-pressed="false">Music: off</button
       ><button id="bt">Light</button
       ><button id="bl" aria-pressed="false">Lite: off</button>
     </div>
@@ -1433,7 +1475,7 @@
                 <div><dt>Based in</dt><dd>Iligan City, Philippines<small style="display:block;font:400 13px var(--body);color:var(--soft)" id="pfclk">PHT · UTC+8</small></dd></div>
                 <div><dt>Experience</dt><dd>Independent since 2022<small style="display:block;font:400 13px var(--body);color:var(--soft)">10+ web apps shipped</small></dd></div>
                 <div><dt>Availability</dt><dd>Open to remote work</dd></div>
-                <button id="pfm" aria-label="Copy email address"><span class="k">Email (tap to copy)</span><span class="v">michaelangeloucquinit@gmail.com</span></button>
+                <button id="pfm" aria-label="Copy email address"><span class="k">Email (tap to copy)</span><span class="v">michaelangeloucquinit<br>@gmail.com</span></button>
               </dl>
               <div class="edu">
                 <h3>BS Information Technology Major in Database Systems</h3>
@@ -2043,7 +2085,7 @@
           <div class="cgrid">
             <div>
               <p class="lab">Open to remote work.</p>
-              <h2>Got a messy idea?<br />Let's structure it.</h2>
+              <h2 id="mh">Got a messy idea?<br />Let's structure it.</h2>
               <button id="mail">michaelangeloucquinit@gmail.com</button>
               <p class="soc">
                 <a
@@ -2069,7 +2111,17 @@
                 >
               </p>
             </div>
-        </div>
+            <div class="mess" id="ms">
+              <div class="mh"><b>Messy idea lab</b><span>type anything, get a plan</span></div>
+              <label for="mi" style="position:absolute;left:-9999px">Describe your messy idea</label>
+              <textarea id="mi" rows="3" placeholder="Type anything: a business problem, a school project, a half-baked app, a website that needs fixing..."></textarea>
+              <div class="mq2" id="mq2">
+                <button>I run a small bakery and need orders online</button><button>I want to turn my Excel sheets into a real system</button><button>my website is slow and looks old</button><button>something fun in 3D for my brand</button><button>a way to track attendance in my school</button>
+              </div>
+              <button class="btn pri" id="mgo">Structure it</button>
+              <div id="mz" aria-live="polite"></div>
+            </div>
+          </div>
       </section>
     </main>
     <footer>
@@ -2229,7 +2281,7 @@
               if (!data || typeof data.value !== "number")
                 throw new Error("Visitor counter returned an invalid value");
               counter.textContent =
-                "Views: " + data.value.toLocaleString("en-US");
+                "Portfolio Views Counter: " + data.value.toLocaleString("en-US");
               if (!tracked) {
                 try {
                   sessionStorage.setItem("portfolio-visit-tracked", "1");
@@ -2237,8 +2289,8 @@
               }
             })
             .catch(function (error) {
-              counter.textContent = "Views unavailable";
-              console.warn(error);
+              counter.textContent = "Portfolio Views Counter unavailable";
+              console.debug(error);
             });
         })();
         var pad = function (n, l) {
@@ -3293,12 +3345,27 @@
           });
         });
         /* toggles */
-        $("#bs").addEventListener("click", function () {
-          sndOn = !sndOn;
-          this.textContent = "Sound: " + (sndOn ? "on" : "off");
-          this.setAttribute("aria-pressed", sndOn);
-          tone(660, 0.15, "sine", 0.05);
-        });
+        /* Music: one toggle for the background track and the UI tones */
+        (function () {
+          var bm = $("#bm"), a = null, on = false, SRC = "audio/ambient.mp3", VOL = 0.25;
+          function play() { var pr = a.play(); if (pr && pr.catch) pr.catch(function () {}); }
+          bm.addEventListener("click", function () {
+            if (!a) {
+              a = new Audio(SRC); a.loop = true; a.volume = 0;
+              a.addEventListener("error", function () { a = null; bm.textContent = "Music: no file"; });
+            }
+            on = !on; sndOn = on;
+            bm.textContent = "Music: " + (on ? "on" : "off");
+            bm.setAttribute("aria-pressed", on);
+            tone(660, 0.15, "sine", 0.05);
+            if (!a) return;
+            if (on) { play(); gsap.to(a, { volume: VOL, duration: 1.5 }); }
+            else gsap.to(a, { volume: 0, duration: 0.8, onComplete: function () { a.pause(); } });
+          });
+          document.addEventListener("visibilitychange", function () {
+            if (a && on) { if (document.hidden) a.pause(); else play(); }
+          });
+        })();
         $("#bt").addEventListener("click", function () {
           setTheme(
             document.documentElement.dataset.theme === "light"
@@ -3531,6 +3598,161 @@
           s.addEventListener("click", function (e) { e.stopPropagation(); });
         });
         })();
+        (function () {
+          var ms = $("#ms"), mi = $("#mi"), mz = $("#mz"), rnd = gsap.utils.random, busy = false;
+          var C = ["#f2d14b", "#5dd68a", "#4fd4ff", "#ff5a2c", "#8f84ff"];
+          var DEF = ["login?", "points", "maybe 3D", "dashboard", "payments??", "chat", "admin", "idk mobile"];
+          var STOP = "a an the and or for of to in on with that this app apps website site web platform system want need like make build create where who can will would should could my our your their it is are be have has get give some thing things user users people about into from them they what how when also just very more one two idea ideas something someone anything but too really maybe".split(" ");
+          var BASE = ["React", "Node.js", "Supabase (PostgreSQL)"];
+          /* what Michael can deliver, matched from whatever the visitor types */
+          var K = [
+            { l: "an online store", re: /shop|store|sell|buy|order|cart|market|product|checkout|pay|bakery|menu|restaurant|retail/, pg: ["Catalog", "Product page", "Cart", "Checkout", "Order tracking", "Admin orders"], tb: [["products", "name", "price", "stock"], ["orders", "status", "total"], ["order_items", "qty"]], st: ["Checkout and receipt flow"], g: ["Catalog, cart and order tracking", "Admin view to manage orders", "Payment flow that fits your market, like the GCash receipt checks in my Kusy project"], q: "How do your customers pay and receive things today?" },
+            { l: "a booking system", re: /book|appoint|schedul|reserv|calendar|slot|salon|clinic|rental/, pg: ["Services", "Pick a slot", "Confirmation", "Admin calendar"], tb: [["services", "name", "duration", "price"], ["bookings", "service_id", "slot", "status"]], st: ["Email or SMS reminders"], g: ["Online booking that blocks double-bookings", "Calendar for you to manage everything"], q: "How long is a typical appointment, and who handles them?" },
+            { l: "a learning platform", re: /learn|school|student|class|course|quiz|lesson|teach|attendance|grade|exam|study|tutor|notes/, pg: ["Courses", "Lesson", "Progress", "Leaderboard"], tb: [["courses", "title", "level"], ["lessons", "course_id", "content"], ["progress", "lesson_id", "done"]], st: ["Points and streaks"], g: ["Progress tracking and rewards, like my Meowks Achieve project", "Roles for teachers and students"], q: "Who are the learners, and who manages the content?" },
+            { l: "a community app", re: /social|chat|communit|forum|messag|friends|follow|feed|group|network of people|club/, pg: ["Feed", "Profile", "Messages", "Notifications"], tb: [["posts", "body", "visibility"], ["messages", "to_user", "body"]], st: ["Realtime updates"], g: ["Accounts, posts and live messaging", "Basic moderation tools"], q: "Is it public or invite-only?" },
+            { l: "a dashboard", re: /dashboard|analytic|report|track|monitor|inventory|stats|kpi|metric|admin|spreadsheet|excel|sheet|record/, pg: ["Overview", "Records", "Charts", "Admin"], tb: [["records", "title", "category", "value"], ["metrics", "record_id", "period", "amount"]], st: ["Charts (Chart.js or D3)"], g: ["One place to see your numbers", "Import from your spreadsheets", "Roles for who sees what"], q: "Where does your data live today?" },
+            { l: "a relationship graph", re: /graph|network|relationship|connect|trace|spread|map of/, pg: ["Graph explorer", "Search", "Details"], tb: null, st: ["Neo4j and Cypher", "Vis.js"], g: ["Interactive map of connections, like my EpiGraph project"], q: "What are the things, and how are they connected?" },
+            { l: "an interactive 3D experience", re: /3d|three|game|virtual|tour|immersive|animation|interactive|fun|brand/, pg: ["3D scene", "Controls", "Info panels"], tb: null, st: ["Three.js", "GSAP"], g: ["Interactive 3D that runs in the browser", "A lighter fallback for slow devices"], q: "Who is it for, and on which devices?" },
+            { l: "an AI assistant", re: /\bai\b|chatbot|gpt|gemini|claude|assistant|recommend|match|automat/, pg: ["Assistant UI", "Admin prompts"], tb: [["conversations", "title"], ["messages", "role", "content"]], st: ["AI API (e.g. Gemini)", "Server-side API keys"], g: ["Assistant wired into your own content, like the AI matchmaking in my Baylo project", "Keys kept safely on the server"], q: "What should it know, and what must it never do?" },
+            { l: "a proper database", re: /database|data|sql|schema|migrat|normaliz|backup|erd/, pg: ["Import", "Browse and edit", "Export"], tb: [["entities", "name", "type"], ["relations", "from_id", "to_id"]], st: ["SQL migration scripts"], g: ["Clean, normalized schema with an ERD", "Migration from your current files", "A backup plan"], q: "What format is the data in now, and how big is it?" },
+            { l: "a security review", re: /secur|hack|vulnerab|audit|privacy|breach|leak|safe|protect|wireshark/, pg: ["Review", "Fix list", "Retest"], tb: null, st: ["Row level security", "Wireshark traffic checks"], g: ["Findings ranked by risk", "Fixes for logins and access control"], q: "Which parts handle logins or private data?" },
+            { l: "a mobile-friendly app", re: /mobile|phone|android|ios|pwa|install/, pg: ["Installable app", "Offline basics"], tb: null, st: ["PWA"], g: ["An installable web app for phones (native store apps are outside what I build today)"], q: "Which phones do your users have?" },
+            { l: "a fix and redesign", re: /slow|old|broken|bug|fix|redesign|outdated|ugly|improve|upgrade|revamp|refresh/, pg: ["Audit", "Fix list", "Retest"], tb: null, st: ["Performance profiling"], g: ["A clear list of what is slow or broken", "Fixes in priority order"], q: "What annoys you or your users the most?" },
+            { l: "a website", re: /website|web ?site|landing|portfolio|blog|brochure|page|online presence|business|company|personal/, pg: ["Home", "About", "Services or work", "Contact"], tb: null, st: ["HTML, CSS and JavaScript", "Tailwind", "Vercel or Netlify"], g: ["Fast, mobile-first site", "Contact form that reaches your inbox", "SEO basics and share previews"], q: "Do you already have a logo, colors or content?" }
+          ];
+          function words(t) { return t.toLowerCase().split(/[^a-z0-9]+/).filter(function (w) { return w.length > 2 && STOP.indexOf(w) < 0; }); }
+          function sing(w) { return w.replace(/ies$/, "y").replace(/([^s])s$/, "$1"); }
+          function uniq(a, n) { var o = []; a.forEach(function (x) { if (o.indexOf(x) < 0) o.push(x); }); return o.slice(0, n); }
+          function scraps(ws) {
+            mz.className = ""; mz.innerHTML = "";
+            ws.forEach(function (w, i) {
+              var e = document.createElement("span");
+              e.className = "sp"; e.textContent = w;
+              e.style.left = rnd(3, 70) + "%"; e.style.top = rnd(4, 80) + "%"; e.style.background = C[i % 5];
+              mz.appendChild(e);
+              gsap.set(e, { rotation: rnd(-16, 16) });
+              if (!reduce) {
+                gsap.from(e, { scale: 0, duration: 0.4, ease: "back.out(3)" });
+                gsap.to(e, { x: rnd(-16, 16), y: rnd(-16, 16), rotation: "+=" + rnd(-7, 7), duration: rnd(2, 4), repeat: -1, yoyo: true, ease: "sine.inOut" });
+              }
+            });
+          }
+          function cur() { var w = words(mi.value).slice(0, 9); return w.length ? w : DEF; }
+          scraps(DEF);
+          var tm;
+          mi.addEventListener("input", function () {
+            clearTimeout(tm);
+            tm = setTimeout(function () { scraps(cur()); tone(500 + cur().length * 40, 0.08, "triangle", 0.02); }, 250);
+          });
+          $$("#mq2 button").forEach(function (b) {
+            b.addEventListener("click", function () { mi.value = b.textContent; mi.dispatchEvent(new Event("input")); });
+          });
+          function plan(txt) {
+            var t = txt.toLowerCase(), hit = K.filter(function (k) { return k.re.test(t); }), ws = words(txt);
+            var main = hit[0], tb = null, i;
+            for (i = 0; i < hit.length && !tb; i++) tb = hit[i].tb;
+            if (!hit.length) {
+              var ent = uniq(ws.map(sing), 2); if (!ent.length) ent = ["project", "task"];
+              tb = ent.map(function (e) { return [e + "s", "name", "status"]; });
+            }
+            var all = function (key) { return [].concat.apply([], hit.map(function (k) { return k[key] || []; })); };
+            return {
+              hit: hit, ws: ws, tb: tb,
+              heard: hit.length ? "It sounds like you need " + uniq(hit.map(function (k) { return k.l; }), 3).join(" plus ") + ", around " + (ws.slice(0, 4).join(", ") || "your idea") + "." : "I can't match this to one of my usual shapes yet, which is fine. Most real ideas start that way, so here is how I would turn it into a scoped first version.",
+              pg: hit.length ? uniq(all("pg"), 9) : ["Home", "Main feature", "Account", "Admin"],
+              st: uniq((tb || hit.some(function (k) { return k.tb; }) ? BASE : []).concat(all("st")).concat(hit.length && !tb ? [] : []), 8).concat(!hit.length || (!tb && !all("st").length) ? [] : []),
+              g: hit.length ? uniq(all("g"), 5) : ["A scoped, working first version of your idea", "A written plan for what comes next"],
+              q: ["Who will use it, and on what devices?"].concat(uniq(hit.map(function (k) { return k.q; }), 2), hit.length ? [] : ["What would make this a success for you?"]),
+              steps: ["Listen and scope", tb ? "Model the data" : "Sketch pages and content", "Build in small slices you can see", "Secure, test and launch"]
+            };
+          }
+          function tbl(n, cols, cls) {
+            return '<div class="tb ' + cls + '"><b>' + n + "</b>" + cols.slice(0, 5).map(function (c) { return "<i>" + c + "</i>"; }).join("") + "</div>";
+          }
+          function chips(a, cl) { return '<div class="bpr">' + a.map(function (x) { return "<span>" + x + "</span>"; }).join("") + (cl || "") + "</div>"; }
+          function go() {
+            if (busy) return; busy = true;
+            var txt = mi.value.trim() || "a messy idea about a project and tasks", r = plan(txt);
+            tone(330, 0.3, "sine", 0.05, 760);
+            gsap.to(mz.querySelectorAll(".sp"), { left: "50%", top: "50%", x: 0, y: 0, scale: 0, opacity: 0, rotation: "+=300", duration: reduce ? 0.01 : 0.7, stagger: reduce ? 0 : 0.04, ease: "power3.in", overwrite: true, onComplete: draw });
+            function draw() {
+              var hasTb = !!r.tb, h = '<p class="bph">' + r.heard + '</p><p class="bpt">How I would deliver it</p><p class="bpo">' + r.steps.map(function (x, i) { return "<b>" + (i + 1) + " " + x + "</b>"; }).join("then") + '</p><p class="bpt">Pages and screens</p>' + chips(r.pg);
+              if (hasTb) {
+                h += '<p class="bpt">Data, with row level security on each table</p><div class="erd"><div class="col" style="flex:none;width:40%;justify-content:center">' + tbl("users", ["id", "email", "role"], "u") + '</div><div class="col">' +
+                  r.tb.slice(0, 4).map(function (t) { return tbl(t[0], ["id", "user_id → users"].concat(t.slice(1), ["created_at"]), "f"); }).join("") + '</div><svg class="erl" aria-hidden="true"></svg></div>';
+              }
+              h += '<p class="bpt">Stack and security</p>' + chips(r.st.length ? r.st : ["HTML, CSS and JavaScript"], hasTb ? '<span class="s">Auth + RLS</span>' : "") +
+                '<p class="bpt">What you would get</p><ul class="bpl">' + r.g.map(function (x) { return "<li>" + x + "</li>"; }).join("") + '</ul><p class="bpt">What I would ask you first</p><ul class="bpl">' + r.q.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>" +
+                '<div class="acts"><a class="btn pri" id="msend" href="#">Send this brief</a><button class="btn" id="mcp">Copy brief</button><button class="btn" id="mrs">Start over</button></div>';
+              mz.className = "on"; mz.innerHTML = h;
+              var brief = "Hi Michael, here is my messy idea:\n" + txt + "\n\nHow you could help: " + r.heard + "\nScreens: " + r.pg.join(", ") + "\nStack: " + r.st.join(", ") + "\nDeliverables: " + r.g.join("; ") + "\n\nCan we talk?";
+              $("#msend").href = "mailto:michaelangeloucquinit@gmail.com?subject=" + encodeURIComponent("Project idea: " + (r.hit[0] ? r.hit[0].l : "something custom")) + "&body=" + encodeURIComponent(brief);
+              $("#mcp").addEventListener("click", function () { try { navigator.clipboard.writeText(brief); } catch (e) {} this.textContent = "Copied"; });
+              $("#mrs").addEventListener("click", function () { busy = false; scraps(cur()); });
+              var erd = mz.querySelector(".erd");
+              if (erd) {
+                var sv = erd.querySelector(".erl"), u = erd.querySelector(".tb.u");
+                erd.querySelectorAll(".tb.f").forEach(function (t, i) {
+                  var x1 = u.offsetLeft + u.offsetWidth, y1 = u.offsetTop + u.offsetHeight / 2, x2 = t.offsetLeft, y2 = t.offsetTop + t.offsetHeight / 2;
+                  var pa = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                  pa.setAttribute("d", "M" + x1 + " " + y1 + " C" + (x1 + 30) + " " + y1 + "," + (x2 - 30) + " " + y2 + "," + x2 + " " + y2);
+                  sv.appendChild(pa);
+                  if (!reduce) gsap.from(pa, { opacity: 0, duration: 0.5, delay: 0.5 + i * 0.15 });
+                });
+              }
+              if (!reduce) {
+                gsap.from(mz.querySelectorAll(".tb"), { scale: 0.4, rotation: function () { return rnd(-14, 14); }, opacity: 0, stagger: 0.12, duration: 0.8, ease: "elastic.out(1,.55)" });
+                gsap.from(mz.querySelectorAll(".bpr span,.bpo b,.bpl li,.bph"), { y: 20, opacity: 0, rotation: function () { return rnd(-6, 6); }, stagger: 0.025, duration: 0.5, delay: 0.3, ease: "back.out(2)" });
+              }
+            }
+          }
+          $("#mgo").addEventListener("click", go);
+          if (!reduce) gsap.fromTo(ms, { rotation: -4, y: 80, opacity: 0.2 }, { rotation: 0, y: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: ms, start: "top 98%", end: "top 55%", scrub: 0.7 } });
+        })();
+
+        (function () {
+          var h = $("#mh");
+          if (!h) return;
+          var rnd = gsap.utils.random, C = ["#ff5a2c", "#8f84ff", "#5dd68a", "#f2d14b", "#4fd4ff"], L = [];
+          function mk(t, c) {
+            return t.split(" ").map(function (w) {
+              return '<span class="w">' + w.split("").map(function (ch) { return '<span class="' + c + '">' + ch + "</span>"; }).join("") + "</span>";
+            }).join(" ");
+          }
+          h.setAttribute("aria-label", "Got a messy idea? Let's structure it.");
+          h.innerHTML = '<span class="ml" aria-hidden="true">' + mk("Got a messy idea?", "mc") + '</span><span class="tl" aria-hidden="true">' + mk("Let's structure it.", "tc") + '<i class="ul"></i></span>';
+          if (reduce) return;
+          function look(o, anim) {
+            o.bx = rnd(-4, 4); o.by = rnd(-14, 14); o.r = rnd(-14, 14);
+            var st = Math.random(), e = o.el;
+            e.style.fontVariationSettings = "'wght' " + Math.round(rnd(280, 800)) + ",'wdth' " + Math.round(rnd(75, 100));
+            e.style.color = st < 0.2 ? C[Math.floor(rnd(0, 5))] : "";
+            e.style.webkitTextStroke = st > 0.9 ? "2px currentColor" : "";
+            if (st > 0.9) e.style.color = "transparent";
+            gsap.to(e, { x: o.bx, y: o.by, rotation: o.r, duration: anim ? 0.9 : 0, ease: "elastic.out(1,.45)", overwrite: "auto" });
+          }
+          $$("#mh .mc").forEach(function (el) { var o = { el: el }; L.push(o); look(o, false); });
+          /* the neat line starts as chaos and sorts itself out as you scroll */
+          gsap.fromTo("#mh .tc", { x: function () { return rnd(-160, 160); }, y: function () { return rnd(-90, 90); }, rotation: function () { return rnd(-70, 70); }, opacity: 0 }, { x: 0, y: 0, rotation: 0, opacity: 1, stagger: 0.025, ease: "none", scrollTrigger: { trigger: h, start: "top 92%", end: "top 38%", scrub: 0.7 } });
+          gsap.fromTo("#mh .ul", { scaleX: 0 }, { scaleX: 1, ease: "none", scrollTrigger: { trigger: h, start: "top 60%", end: "top 30%", scrub: 0.7 } });
+          /* generative drift: a few letters re-roll every moment */
+          setInterval(function () {
+            if (document.hidden) return;
+            for (var i = 0; i < 3; i++) look(L[Math.floor(rnd(0, L.length))], true);
+          }, 1600);
+          /* letters shy away from the cursor, click re-rolls everything */
+          h.addEventListener("pointermove", function (e) {
+            if (e.pointerType === "touch") return;
+            L.forEach(function (o) {
+              var r = o.el.getBoundingClientRect(), dx = r.left + r.width / 2 - e.clientX, dy = r.top + r.height / 2 - e.clientY, d = Math.sqrt(dx * dx + dy * dy);
+              if (d < 130) gsap.to(o.el, { x: o.bx + (dx / d) * (130 - d) * 0.6, y: o.by + (dy / d) * (130 - d) * 0.6, rotation: o.r + dx * 0.15, duration: 0.35, overwrite: "auto" });
+              else gsap.to(o.el, { x: o.bx, y: o.by, rotation: o.r, duration: 0.6, overwrite: "auto" });
+            });
+          });
+          h.addEventListener("pointerleave", function () { L.forEach(function (o) { gsap.to(o.el, { x: o.bx, y: o.by, rotation: o.r, duration: 0.6, overwrite: "auto" }); }); });
+          h.addEventListener("click", function () { L.forEach(function (o) { look(o, true); }); tone(440, 0.25, "sine", 0.04, 880); });
+        })();
+
         addEventListener("load", function () {
           ScrollTrigger.refresh();
         });
